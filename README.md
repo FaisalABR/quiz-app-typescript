@@ -1,50 +1,46 @@
-# React + TypeScript + Vite
+# Quiz App Dot
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Quiz App Dot adalah proyek React yang diinisialisasi menggunakan Vite. Proyek ini dibuat bertujuan untuk salah satu alur rekruitmen magang yang dilakukan di Dot Indonesia. Dan saya melakukan refactor dari javascript ke typescript.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ikuti langkah-langkah berikut untuk menginisialisasi proyek:
 
-## Expanding the ESLint configuration
+1. **Clone Repository**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   Jika kamu belum meng-clone repository, gunakan perintah berikut:
 
-- Configure the top-level `parserOptions` property like this:
+   ```bash
+   git clone <URL_REPOSITORY>
+   cd <NAMA_FOLDER_PROJECT>
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2. **Install Dependencies**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+   Install semua dependencies yang diperlukan dengan perintah berikut:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+   ```bash
+   npm install
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+3. **Setup Environment Variable Firebase**
+   Atur enviroment variable firebase kamu pada file .env :
+
+   ```bash
+   VITE_API_KEY=your_api_key
+   ```
+
+4. **Run Development Server**
+
+   Untuk menjalankan server pengembangan, gunakan perintah berikut:
+
+   ```bash
+   npm run dev
+   ```
+
+5. **Run Jsonplaceholder Server**
+   Untuk menjalankan server jsonplaceholder, gunakan perintah berikut:
+
+   ```bash
+   npx json-server db.json
+   ```
