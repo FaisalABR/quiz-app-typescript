@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useQuizContext } from "../../../Hooks/useQuiz";
+import { TotalTimer } from "../../atoms";
 
 export const Timer = () => {
   const { timer, setIsEnded, setTimer } = useQuizContext();
@@ -19,9 +20,7 @@ export const Timer = () => {
   return (
     <div className="px-2 py-1 flex items-center gap-3 rounded-sm bg-blue-200">
       <p className="text-lg font-semibold text-blue-500">Time Left</p>
-      <div className="px-3 rounded-sm bg-blue-950">
-        <span className="text-lg font-bold text-white">{timer}</span>
-      </div>
+      <TotalTimer total={timer} />
     </div>
   );
 };

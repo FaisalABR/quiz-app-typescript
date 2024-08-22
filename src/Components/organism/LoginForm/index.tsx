@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../../Hooks/useAuth";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
+import { AccountPrompt, AuthTitle, Button, Input, Label } from "../../atoms";
+import { toast } from "react-toastify";
 
 export const LoginForm = () => {
-  const { signIn } = useAuthContext();
+  const { signIn, handleSection } = useAuthContext();
   const navigate = useNavigate();
   const [values, setValues] = useState({
     email: "",
@@ -13,46 +15,63 @@ export const LoginForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await signIn(values.email, values.password);
-      if (res) {
-        navigate("/");
-      }
-    } catch (error) {
-      console.error("Login failed:", error);
+      await signIn(values.email, values.password);
+
+      toast.success("Login success", {
+        position: "top-right",
+        theme: "light",
+      });
+      navigate("/");
+    } catch (e) {
+      toast.error((e as Error).message, {
+        position: "top-right",
+        theme: "light",
+      });
     }
+
+    setValues({
+      email: "",
+      password: "",
+    });
   };
 
   return (
     <div className="w-full max-w-[420px] px-4 bg-white rounded-sm shadow-sm py-3">
-      <h2 className="text-lg font-semibold text-blue-950 text-center">Login</h2>
+      <AuthTitle text="Login" />
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div className="flex flex-col justify-start gap-3">
-          <label className="text-blue-950 ">Email</label>
-          <input
-            type="text"
-            className="px-2 py-1 rounded-lg border-2 border-gray-500"
+          <Label text="Email" />
+          <Input
+            type="email"
             placeholder="input your email"
             value={values.email}
-            onChange={(e) => setValues({ ...values, email: e.target.value })}
+            handleChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setValues({ ...values, email: e.target.value })
+            }
           />
         </div>
         <div className="flex flex-col justify-start gap-3">
-          <label className="text-blue-950 ">Password</label>
-          <input
+          <Label text="Password" />
+          <Input
             type="password"
-            className="px-2 py-1 rounded-lg border-2 border-gray-500"
             placeholder="input your password"
             value={values.password}
-            onChange={(e) => setValues({ ...values, password: e.target.value })}
+            handleChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setValues({ ...values, password: e.target.value })
+            }
           />
         </div>
-        <button
-          type="submit"
+        <Button
           className="px-3 py-1 rounded-xl bg-blue-950 font-bold text-white"
-        >
-          Log In
-        </button>
+          text="Log In"
+        />
       </form>
+
+      <AccountPrompt
+        prompt="Don't have an account?"
+        text="Sign Up"
+        handleSection={handleSection}
+      />
     </div>
   );
 };

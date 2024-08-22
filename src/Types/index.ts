@@ -1,11 +1,11 @@
 import { FirebaseError } from "firebase/app";
 import { User, UserCredential } from "firebase/auth";
-import { ReactNode } from "react";
+import { ChangeEvent, ReactNode } from "react";
 
+// PROPS TYPES
 export interface ChildrenTypes {
   children: ReactNode;
 }
-
 export interface QuizTypes {
   type: string;
   difficulty: string;
@@ -17,7 +17,7 @@ export interface QuizTypes {
 
 export interface ButtonProps {
   className: string;
-  handleClick: () => void;
+  handleClick?: () => void;
   text: string;
 }
 
@@ -31,17 +31,39 @@ export interface GreetingProps {
   text: string;
 }
 
+export interface QuestionProps {
+  number: number;
+  question: string;
+}
+
+export interface TotalTimerProps {
+  total: number;
+}
+
+export interface AccountPromptProps {
+  prompt: string;
+  handleSection: () => void;
+  text: string;
+}
+
+export interface InputProps {
+  type: string;
+  placeholder: string;
+  value: string;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+}
+
+// CONTEXT TYPES
 export interface AuthContextType {
   isAuth: User | null;
   setIsAuth: React.Dispatch<React.SetStateAction<User | null>>;
   loading: boolean;
-  signUp: (email: string, password: string) => void;
-  signIn: (
-    email: string,
-    password: string
-  ) => Promise<UserCredential | undefined>;
+  signUp: (email: string, password: string) => Promise<UserCredential>;
+  signIn: (email: string, password: string) => Promise<UserCredential>;
   logout: () => Promise<void>;
   error: FirebaseError | null;
+  handleSection: () => void;
+  openLogin: boolean;
 }
 
 export interface QuizContextType {

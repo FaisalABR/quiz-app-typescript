@@ -1,10 +1,9 @@
-import { useState } from "react";
 import { LoginForm, SignUpForm } from "../../Components/organism";
 import { Layout } from "../../Layouts";
+import { useAuthContext } from "../../Hooks/useAuth";
 
 export const Login = () => {
-  const [openLogin, setLogin] = useState<boolean>(true);
-
+  const { openLogin } = useAuthContext();
   return (
     <Layout>
       <div className="w-full h-screen bg-blue-600 flex items-center justify-center">

@@ -7,7 +7,6 @@ export const Quiz = () => {
   const { fetchQuestions, isEnded } = useQuizContext();
 
   useEffect(() => {
-    // if(localStorage.getItem('q'))
     fetchQuestions();
   }, []);
 

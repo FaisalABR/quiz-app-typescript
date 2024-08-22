@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   User,
+  UserCredential,
 } from "firebase/auth";
 import { authFirebase } from "../firebase";
 import { AuthContextType, ChildrenTypes } from "../Types";
@@ -19,28 +20,34 @@ export const AuthContext = createContext<AuthContextType | undefined>(
 const AuthProvider = ({ children }: ChildrenTypes) => {
   const [isAuth, setIsAuth] = useState<User | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [openLogin, setOpenLogin] = useState<boolean>(true);
   const [error, setError] = useState<FirebaseError | null>(null);
 
-  const signUp = async (email: string, password: string) => {
+  const signUp = async (
+    email: string,
+    password: string
+  ): Promise<UserCredential> => {
     try {
+      await setPersistence(authFirebase, browserLocalPersistence);
       const res = await createUserWithEmailAndPassword(
         authFirebase,
         email,
         password
       );
 
-      console.log(res);
-    } catch (e) {
+      return res;
+    } catch (e: unknown) {
       if (e instanceof FirebaseError) {
-        setError(e);
+        throw new Error(e.message);
       }
+
+      throw new Error("unknown error");
     }
   };
 
   const signIn = async (email: string, password: string) => {
     try {
       await setPersistence(authFirebase, browserLocalPersistence);
-      console.log("set persistence");
       const res = await signInWithEmailAndPassword(
         authFirebase,
         email,
@@ -50,20 +57,24 @@ const AuthProvider = ({ children }: ChildrenTypes) => {
       return res;
     } catch (e: unknown) {
       if (e instanceof FirebaseError) {
-        setError(e);
+        throw Error(e.message);
       }
+      throw new Error("unknown error");
     }
   };
 
   const logout = async () => {
     try {
       await signOut(authFirebase);
-      console.log("Sign out success");
     } catch (e) {
       if (e instanceof FirebaseError) {
         setError(e);
       }
     }
+  };
+
+  const handleSection = () => {
+    setOpenLogin(!openLogin);
   };
 
   useEffect(() => {
@@ -84,7 +95,17 @@ const AuthProvider = ({ children }: ChildrenTypes) => {
 
   return (
     <AuthContext.Provider
-      value={{ isAuth, setIsAuth, loading, signUp, signIn, logout, error }}
+      value={{
+        isAuth,
+        setIsAuth,
+        loading,
+        signUp,
+        signIn,
+        logout,
+        error,
+        handleSection,
+        openLogin,
+      }}
     >
       {children}
     </AuthContext.Provider>
