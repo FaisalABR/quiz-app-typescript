@@ -3,7 +3,9 @@ import { useQuizContext } from "../../../Hooks/useQuiz";
 import { Button } from "../../atoms";
 
 export const Choices = () => {
-  const { index, questions, handleAnswer } = useQuizContext();
+  const { state, handleAnswer } = useQuizContext();
+  const { index, questions } = state;
+
   const [answers, setAnswers] = useState([
     ...questions[index].incorrect_answers,
     questions[index].correct_answer,

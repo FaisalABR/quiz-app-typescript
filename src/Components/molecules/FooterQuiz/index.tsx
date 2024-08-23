@@ -1,10 +1,10 @@
 import { useQuizContext } from "../../../Hooks/useQuiz";
 
 export const FooterQuiz = () => {
-  const { index, questions } = useQuizContext();
+  const { state } = useQuizContext();
 
-  const currentQuestion = index + 1;
-  const totalQuestion = questions.length;
+  const currentQuestion = state.index + 1;
+  const totalQuestion = state.questions.length;
 
   return (
     <div className="flex px-4 items-center justify-between">

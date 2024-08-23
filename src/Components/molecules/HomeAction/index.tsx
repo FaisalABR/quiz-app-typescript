@@ -3,8 +3,9 @@ import { useQuizContext } from "../../../Hooks/useQuiz";
 import { useAuthContext } from "../../../Hooks/useAuth";
 
 export const HomeAction = () => {
-  const { resetGame, isResume } = useQuizContext();
+  const { resetGame, state } = useQuizContext();
   const { isAuth } = useAuthContext();
+  console.log(state.isResume);
 
   return (
     <>
@@ -24,7 +25,7 @@ export const HomeAction = () => {
           Login
         </Link>
       )}
-      {isResume && isAuth ? (
+      {state.isResume && isAuth ? (
         <Link
           to="/quiz"
           className="text-blue-950 border border-blue-950 px-3 py-1 rounded-md bg-white font-bold"

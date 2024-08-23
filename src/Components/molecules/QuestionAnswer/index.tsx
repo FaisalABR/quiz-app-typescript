@@ -3,11 +3,13 @@ import { Question } from "../../atoms";
 import { Choices } from "../Choices";
 
 export const QuestionAnswer = () => {
-  const { index, questions } = useQuizContext();
+  const { state } = useQuizContext();
+  const currentNumber = state.index + 1;
+  const currentQuestion = state.questions[state.index].question;
 
   return (
     <div className="px-4">
-      <Question number={index + 1} question={questions[index].question} />
+      <Question number={currentNumber} question={currentQuestion} />
       <Choices />
     </div>
   );

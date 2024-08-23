@@ -1,6 +1,6 @@
 import { FirebaseError } from "firebase/app";
 import { User, UserCredential } from "firebase/auth";
-import { ChangeEvent, ReactNode } from "react";
+import { ChangeEvent, Dispatch, ReactNode } from "react";
 
 // PROPS TYPES
 export interface ChildrenTypes {
@@ -67,19 +67,63 @@ export interface AuthContextType {
 }
 
 export interface QuizContextType {
-  index: number;
-  questions: QuizTypes[];
+  state: QuizStateTypes;
+  dispatch: Dispatch<QuizActionType>;
   handleAnswer: (answer: string) => void;
-  resetGame: () => void;
-  score: number;
-  countRight: number;
-  timer: number;
-  setIsEnded: React.Dispatch<React.SetStateAction<boolean>>;
-  setTimer: React.Dispatch<React.SetStateAction<number>>;
-  isResume: boolean;
-  isEnded: boolean;
   fetchQuestions: () => Promise<void>;
-  error: FirebaseError | null;
+  resetGame: () => void;
 }
 
-export type Action = { type: "NEXT_QUESTION" };
+export interface QuizStateTypes {
+  questions: QuizTypes[];
+  index: number;
+  timer: number;
+  isEnded: boolean;
+  score: number;
+  loading: boolean;
+  error: Error | null;
+  countRight: number;
+  isResume: boolean;
+}
+
+// ACTION TYPES
+
+type SavedStateTypes = {
+  questions: QuizTypes[];
+  index: number;
+  timer: number;
+  isEnded: boolean;
+  score: number;
+  countRight: number;
+};
+
+export type QuizActionType =
+  | { type: "RESET_GAME" }
+  | { type: "ANSWER_CORRECT" }
+  | { type: "NEXT_QUESTION" }
+  | { type: "PAUSE_GAME" }
+  | { type: "RESUME_GAME" }
+  | {
+      type: "LOAD_FROM_STORAGE";
+      payload: SavedStateTypes;
+    }
+  | {
+      type: "FETCH_DATA";
+      payload: QuizTypes[];
+    }
+  | {
+      type: "HANDLE_ERROR";
+      payload: Error;
+    }
+  | {
+      type: "FETCH_LOADING";
+    }
+  | {
+      type: "FINISH_LOADING";
+    }
+  | {
+      type: "COUNTDOWN";
+    }
+  | {
+      type: "ENDGAME";
+    };

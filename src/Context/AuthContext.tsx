@@ -19,7 +19,7 @@ export const AuthContext = createContext<AuthContextType | undefined>(
 
 const AuthProvider = ({ children }: ChildrenTypes) => {
   const [isAuth, setIsAuth] = useState<User | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [openLogin, setOpenLogin] = useState<boolean>(true);
   const [error, setError] = useState<FirebaseError | null>(null);
 
