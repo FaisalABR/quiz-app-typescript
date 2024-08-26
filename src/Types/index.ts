@@ -127,3 +127,29 @@ export type QuizActionType =
   | {
       type: "ENDGAME";
     };
+
+export type UpdateProductTypes = {
+  id: string;
+  name: string;
+  quantity: number;
+  price: number;
+};
+
+export type CreateProductTypes = {
+  name: string;
+  quantity: number;
+  price: number;
+};
+
+export type ProductTypes = {
+  id: string;
+  key: string;
+  name: string;
+  quantity: number;
+  price: number;
+};
+
+export type AuthLoginTypes = {
+  email: string;
+  password: string;
+};

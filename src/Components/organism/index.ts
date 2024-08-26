@@ -4,3 +4,6 @@ export * from "./Navbar";
 export * from "./BoxHome";
 export * from "./LoginForm";
 export * from "./SignUpForm";
+export * from "./ProductForm";
+export * from "./ProductTable";
+export * from "./ModalUpdate";

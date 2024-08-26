@@ -1,3 +1,9 @@
+import {
+  UploadOutlined,
+  UserOutlined,
+  VideoCameraOutlined,
+} from "@ant-design/icons";
+
 export const QUESTION_QUIZ = [
   {
     type: "multiple",
@@ -108,3 +114,21 @@ export const QUESTION_QUIZ = [
 ];
 
 export const TOTAL_TIMER = 15;
+
+export const NAV_ITEMS = [
+  {
+    key: "products-key",
+    icon: <UserOutlined />,
+    label: "nav 1",
+  },
+  {
+    key: "2",
+    icon: <VideoCameraOutlined />,
+    label: "nav 2",
+  },
+  {
+    key: "3",
+    icon: <UploadOutlined />,
+    label: "nav 3",
+  },
+];

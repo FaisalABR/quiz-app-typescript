@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { Home, Login, Quiz } from "./Pages";
+import { Home, Login, Product, Quiz } from "./Pages";
 import { useAuthContext } from "./Hooks/useAuth";
 import { Loading } from "./Components/atoms";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,6 +23,8 @@ function App() {
           element={isAuth ? <Quiz /> : <Navigate to="/login" replace />}
           path="/quiz"
         />
+        <Route element={<Product />} path="/products" />
+        <Route element={<Product />} path="/products/:productId" />
       </Routes>
       <ToastContainer />
     </>
