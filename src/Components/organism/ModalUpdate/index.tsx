@@ -22,7 +22,6 @@ export const ModalUpdate = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
   const [form] = Form.useForm();
-  const [messageApi, contextHolder] = message.useMessage();
   const queryClient = useQueryClient();
 
   const { data } = useQuery({
@@ -35,16 +34,10 @@ export const ModalUpdate = () => {
     mutationFn: updateProduct,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["products"] });
-      messageApi.open({
-        type: "success",
-        content: "Berhasil mengupdate data",
-      });
+      message.success("Berhasil mengupdate data");
     },
     onError: () => {
-      messageApi.open({
-        type: "error",
-        content: "Gagal mengupdate data",
-      });
+      message.error("Gagal mengupdate data");
     },
   });
 
@@ -81,58 +74,46 @@ export const ModalUpdate = () => {
     }
   }, [productId, data, openModal]);
   return (
-    <>
-      {contextHolder}
-      <Modal
-        forceRender
-        open={openModal}
-        onCancel={cancelModal}
-        footer={[
-          <Button key="back" onClick={cancelModal}>
-            Return
-          </Button>,
-          <Button
-            form="updateForm"
-            key="submit"
-            type="primary"
-            htmlType="submit"
-          >
-            Submit
-          </Button>,
-        ]}
+    <Modal
+      forceRender
+      open={openModal}
+      onCancel={cancelModal}
+      footer={[
+        <Button key="back" onClick={cancelModal}>
+          Return
+        </Button>,
+        <Button form="updateForm" key="submit" type="primary" htmlType="submit">
+          Submit
+        </Button>,
+      ]}
+    >
+      <Form
+        id="updateForm"
+        form={form}
+        onFinish={onFinish}
+        name="update-products"
+        labelCol={{ span: 4 }}
+        wrapperCol={{ span: 16 }}
+        style={{ width: "100%" }}
       >
-        <Form
-          id="updateForm"
-          form={form}
-          onFinish={onFinish}
-          name="update-products"
-          labelCol={{ span: 4 }}
-          wrapperCol={{ span: 16 }}
-          style={{ width: "100%" }}
+        <Form.Item<CreateProductTypes> label="Name" name="name" rules={[rule]}>
+          <Input />
+        </Form.Item>
+        <Form.Item<CreateProductTypes>
+          label="Price"
+          name="price"
+          rules={[rule]}
         >
-          <Form.Item<CreateProductTypes>
-            label="Name"
-            name="name"
-            rules={[rule]}
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item<CreateProductTypes>
-            label="Price"
-            name="price"
-            rules={[rule]}
-          >
-            <InputNumber />
-          </Form.Item>
-          <Form.Item<CreateProductTypes>
-            label="Quantity"
-            name="quantity"
-            rules={[rule]}
-          >
-            <InputNumber />
-          </Form.Item>
-        </Form>
-      </Modal>
-    </>
+          <InputNumber />
+        </Form.Item>
+        <Form.Item<CreateProductTypes>
+          label="Quantity"
+          name="quantity"
+          rules={[rule]}
+        >
+          <InputNumber />
+        </Form.Item>
+      </Form>
+    </Modal>
   );
 };

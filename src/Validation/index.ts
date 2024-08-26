@@ -16,8 +16,8 @@ export const CreateFormValidation = z.object({
   }),
 });
 
-export const AuthValidaiton = z.object({
-  name: z
+export const AuthValidation = z.object({
+  email: z
     .string({
       required_error: " Field Email wajib diisi",
     })

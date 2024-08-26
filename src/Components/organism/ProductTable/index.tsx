@@ -7,8 +7,6 @@ import { useNavigate } from "react-router-dom";
 export const ProductTable = () => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
-  const [messageApi, contextHolder] = message.useMessage();
-
   const { data } = useQuery({
     queryKey: ["products"],
     queryFn: fetchProducts,
@@ -18,18 +16,17 @@ export const ProductTable = () => {
     mutationFn: deleteProduct,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["products"] });
-      messageApi.open({
-        type: "success",
-        content: "Berhasil menghapus data",
-      });
+      message.success("Berhasil menghapus data");
     },
     onError: () => {
-      messageApi.open({
-        type: "error",
-        content: "Gagal menghapus data",
-      });
+      message.error("Gagal menghapus data");
     },
   });
+
+  const formattedData = data?.map((item: ProductTypes) => ({
+    ...item,
+    key: item.id,
+  }));
 
   const COLUMNS_NAME: TableProps<ProductTypes>["columns"] = [
     {
@@ -70,9 +67,10 @@ export const ProductTable = () => {
     },
   ];
   return (
-    <>
-      {contextHolder}
-      <Table scroll={{ x: true }} columns={COLUMNS_NAME} dataSource={data} />
-    </>
+    <Table
+      scroll={{ x: true }}
+      columns={COLUMNS_NAME}
+      dataSource={formattedData}
+    />
   );
 };

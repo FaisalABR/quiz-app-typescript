@@ -8,4 +8,3 @@ export * from "./TotalTime";
 export * from "./AccountPrompt";
 export * from "./Label";
 export * from "./Input";
-export * from "./AuthTitle";

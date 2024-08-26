@@ -1,71 +1,65 @@
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../../Hooks/useAuth";
-import { ChangeEvent, useState } from "react";
-import { AccountPrompt, AuthTitle, Button, Input, Label } from "../../atoms";
-import { toast } from "react-toastify";
+import { AccountPrompt } from "../../atoms";
+import { Button, Form, FormProps, Input, message } from "antd";
+import { AuthLoginTypes } from "../../../Types";
+import { createSchemaFieldRule } from "antd-zod";
+import { AuthValidation } from "../../../Validation";
+import Title from "antd/es/typography/Title";
+
+const rule = createSchemaFieldRule(AuthValidation);
 
 export const SignUpForm = () => {
-  const [values, setValues] = useState({
-    email: "",
-    password: "",
-  });
   const navigate = useNavigate();
   const { signUp, handleSection } = useAuthContext();
+  const [form] = Form.useForm();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleFinisih: FormProps<AuthLoginTypes>["onFinish"] = async (
+    values
+  ) => {
     try {
       await signUp(values.email, values.password);
 
-      toast.success("Sign up success", {
-        position: "top-right",
-        theme: "light",
-      });
+      message.success("Sign up success");
       navigate("/");
     } catch (e) {
-      toast.error((e as Error).message, {
-        position: "top-right",
-        theme: "light",
-      });
+      message.error((e as Error).message);
     }
 
-    setValues({
-      email: "",
-      password: "",
-    });
+    form.resetFields();
   };
 
   return (
     <div className="w-full max-w-[420px] px-4 bg-white rounded-sm shadow-sm py-3">
-      <AuthTitle text="Sign Up" />
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <div className="flex flex-col justify-start gap-3">
-          <Label text="Email" />
-          <Input
-            type="email"
-            placeholder="input your email"
-            value={values.email}
-            handleChange={(e: ChangeEvent<HTMLInputElement>) =>
-              setValues({ ...values, email: e.target.value })
-            }
-          />
-        </div>
-        <div className="flex flex-col justify-start gap-3">
-          <Label text="Password" />
-          <Input
-            type="password"
-            placeholder="input your password"
-            value={values.password}
-            handleChange={(e: ChangeEvent<HTMLInputElement>) =>
-              setValues({ ...values, password: e.target.value })
-            }
-          />
-        </div>
-        <Button
-          className="px-3 py-1 rounded-xl bg-blue-950 font-bold text-white"
-          text="Sign Up"
-        />
-      </form>
+      <Title level={2} style={{ textAlign: "center" }}>
+        Sign Up
+      </Title>
+      <Form
+        form={form}
+        name="sign up"
+        onFinish={handleFinisih}
+        labelCol={{ span: 4 }}
+        wrapperCol={{ span: 24 }}
+        style={{ width: "100%" }}
+        layout="vertical"
+      >
+        <Form.Item<AuthLoginTypes> label="Email" name="email" rules={[rule]}>
+          <Input />
+        </Form.Item>
+        <Form.Item<AuthLoginTypes>
+          label="Password"
+          name="password"
+          rules={[rule]}
+        >
+          <Input.Password />
+        </Form.Item>
+        <Form.Item wrapperCol={{ offset: 0, span: 24 }}>
+          <Button style={{ width: "100%" }} type="primary" htmlType="submit">
+            Sign Up
+          </Button>
+        </Form.Item>
+      </Form>
+
       <AccountPrompt
         prompt="Already have account?"
         text="Login"

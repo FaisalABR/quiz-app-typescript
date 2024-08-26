@@ -13,23 +13,16 @@ const rule = createSchemaFieldRule(CreateFormValidation);
 export const ProductForm = () => {
   const [openForm, setOpenForm] = useState(false);
   const [form] = Form.useForm<CreateProductTypes>();
-  const [messageApi, contextHolder] = message.useMessage();
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
     mutationFn: addProduct,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["products"] });
-      messageApi.open({
-        type: "success",
-        content: "Berhasil menambahkan product",
-      });
+      message.success("Berhasil menambahkan product");
     },
     onError: () => {
-      messageApi.open({
-        type: "error",
-        content: "Gagal menambahkan data",
-      });
+      message.error("Gagal menambahkan data");
     },
   });
 
@@ -44,7 +37,6 @@ export const ProductForm = () => {
   };
   return (
     <>
-      {contextHolder}
       <Space style={{ margin: "20px 20" }}>
         <Button
           onClick={() => setOpenForm(!openForm)}
@@ -56,6 +48,7 @@ export const ProductForm = () => {
       </Space>
       {openForm && (
         <Form
+          form={form}
           name="create-products"
           onFinish={onFinish}
           labelCol={{ span: 4 }}
