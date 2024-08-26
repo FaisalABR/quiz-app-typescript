@@ -11,8 +11,8 @@ Ikuti langkah-langkah berikut untuk menginisialisasi proyek:
    Jika kamu belum meng-clone repository, gunakan perintah berikut:
 
    ```bash
-   git clone <URL_REPOSITORY>
-   cd <NAMA_FOLDER_PROJECT>
+   git clone https://github.com/FaisalABR/quiz-app-typescript.git
+   cd quiz-app-typescript
    ```
 
 2. **Install Dependencies**
