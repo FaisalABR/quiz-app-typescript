@@ -27,7 +27,14 @@ Ikuti langkah-langkah berikut untuk menginisialisasi proyek:
    Atur enviroment variable firebase kamu pada file .env :
 
    ```bash
-   VITE_API_KEY=your_api_key
+   VITE_API_KEY=your_api_key_firebase
+   VITE_AUTH_DOMAIN=your_auth_domain_firebase
+   VITE_PROJECT_ID=your_project_id_firebase
+   VITE_STORAGE_BUCKET=your_storage_bucket_firebase
+   VITE_MESSAGE_SENDER=174264995425
+   VITE_APP_ID=your_app_id_firebase
+   VITE_MEASUREMENT_ID=your_measurment_id_firebase
+   VITE_API_URL=your_base_api
    ```
 
 4. **Run Development Server**
