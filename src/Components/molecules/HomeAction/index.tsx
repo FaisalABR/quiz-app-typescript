@@ -5,7 +5,6 @@ import { useAuthContext } from "../../../Hooks/useAuth";
 export const HomeAction = () => {
   const { resetGame, state } = useQuizContext();
   const { isAuth } = useAuthContext();
-  console.log(state.isResume);
 
   return (
     <>
