@@ -4,6 +4,7 @@ export type FilterProps = {
   divisi: string;
   posisi: string;
   query: string;
+  page: number;
 };
 
 export const fetchTalents = async (filter: FilterProps) => {

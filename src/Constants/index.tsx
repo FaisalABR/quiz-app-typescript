@@ -124,3 +124,17 @@ export const NAV_ITEMS = [
     label: <Link to="/talents">Talents</Link>,
   },
 ];
+
+export const SELECT_POSISI = [
+  { value: "Frontend Developer", label: "Frontend" },
+  { value: "Backend Developer", label: "Backend" },
+  { value: "Mobile Developer", label: "Mobile" },
+  { value: "Quality Assurance", label: "Quality Assurance" },
+];
+
+export const SELECT_DIVISI = [
+  { value: "IT Development", label: "IT Development" },
+  { value: "Marketing", label: "Marketing" },
+  { value: "Finance", label: "Finance" },
+  { value: "IT Network", label: "IT Network" },
+];

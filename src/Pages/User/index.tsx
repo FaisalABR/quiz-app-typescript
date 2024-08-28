@@ -11,37 +11,65 @@ import {
   Input,
 } from "antd";
 import { Button } from "../../Components/atoms";
-import { PlusSquareOutlined } from "@ant-design/icons";
+import {
+  DeleteOutlined,
+  EditOutlined,
+  PlusSquareOutlined,
+} from "@ant-design/icons";
 import { TalentTypes } from "../../Types";
 import { formatCurrency } from "../../Utils/utils";
 import type { GetProps } from "antd";
 import { useQuery } from "@tanstack/react-query";
 import { fetchTalents } from "../../Services/talents";
 import { useEffect, useState } from "react";
+import { SELECT_DIVISI, SELECT_POSISI } from "../../Constants";
+import { useNavigate } from "react-router-dom";
 
 type SearchProps = GetProps<typeof Input.Search>;
 const { Search } = Input;
 
 export const User = () => {
+  const navigate = useNavigate();
+  const currentQueryParams = new URLSearchParams();
   const [filter, setFilter] = useState({
-    posisi: "",
-    divisi: "",
-    query: "",
+    posisi: currentQueryParams.get("posisi") || "",
+    divisi: currentQueryParams.get("divisi") || "",
+    query: currentQueryParams.get("query") || "",
+    page: 1,
   });
-  const { isLoading, data, isError, refetch } = useQuery({
+  const { isLoading, data, isError } = useQuery({
     queryKey: ["talents", filter],
     queryFn: () => fetchTalents(filter),
   });
 
+  console.log(filter);
+
+  // Filtered data base on search query
   const filteredData = data?.filter((item: TalentTypes) =>
     item.nama.toLowerCase().includes(filter.query.toLowerCase())
   );
 
+  // Handling Error
   useEffect(() => {
     if (isError) {
       message.error("Gagal dalam loading data, mohon hubungi developer!");
     }
   }, [isError]);
+
+  // Handling UrlSearchParams
+  useEffect(() => {
+    const queryParams = new URLSearchParams();
+
+    if (filter.posisi) queryParams.set("posisi", filter.posisi);
+    if (filter.divisi) queryParams.set("divisi", filter.divisi);
+    if (filter.query) queryParams.set("query", filter.query);
+    if (filter.page) queryParams.set("page", String(filter.page));
+
+    navigate({
+      pathname: location.pathname,
+      search: queryParams.toString(),
+    });
+  }, [filter, navigate, location.pathname]);
 
   const COLUMNS_NAME: TableProps<TalentTypes>["columns"] = [
     {
@@ -96,30 +124,23 @@ export const User = () => {
     {
       title: "Action",
       key: "action",
-      render: (__, record) => (
+      render: () => (
         <Space>
-          <Button danger>{record.nama} Delete</Button>
-          <Button>Edit</Button>
+          <Button icon={<DeleteOutlined />} danger>
+            {" "}
+            Delete
+          </Button>
+          <Button icon={<EditOutlined />}>Edit</Button>
         </Space>
       ),
     },
   ];
 
-  const handleChangeDivisi = (value: string) => {
+  const handleSelectChange = (key: string, value: string) => {
     setFilter({
       ...filter,
-      divisi: value,
+      [key]: value ?? "",
     });
-    refetch();
-    console.log(`selected ${value}`);
-  };
-
-  const handleChangePosisi = (value: string) => {
-    setFilter({
-      ...filter,
-      posisi: value,
-    });
-    console.log(`selected ${value}`);
   };
 
   const onSearch: SearchProps["onSearch"] = (value) => {
@@ -147,44 +168,37 @@ export const User = () => {
           Create Talent
         </Button>
       </Flex>
-      <Flex style={{ marginBottom: "2rem" }} gap="middle">
+      <Flex style={{ marginBottom: "2rem" }} gap="small">
         <Select
-          style={{ width: "30%" }}
-          onChange={handleChangeDivisi}
+          style={{ width: "25%" }}
+          onChange={(value) => handleSelectChange("divisi", value ?? "")}
           placeholder="Divisi"
-          options={[
-            { value: "IT Development", label: "IT Development" },
-            { value: "Marketing", label: "Marketing" },
-            { value: "Finance", label: "Finance" },
-            { value: "IT Network", label: "IT Network" },
-          ]}
+          allowClear
+          options={SELECT_DIVISI}
         />
         <Select
-          style={{ width: "30%" }}
-          onChange={handleChangePosisi}
+          style={{ width: "25%" }}
+          onChange={(value) => handleSelectChange("posisi", value ?? "")}
           placeholder="Posisi"
-          options={[
-            { value: "Frontend Developer", label: "Frontend" },
-            { value: "Backend Developer", label: "Backend" },
-            { value: "Mobile Developer", label: "Mobile" },
-            { value: "Quality Assurance", label: "Quality Assurance" },
-          ]}
+          allowClear
+          options={SELECT_POSISI}
         />
         <Search
           placeholder="input search text"
           onSearch={onSearch}
-          style={{ width: "40%" }}
+          style={{ width: "50%" }}
         />
       </Flex>
 
       <Table
-        scroll={{ x: true }}
         columns={COLUMNS_NAME}
-        loading={isLoading}
         dataSource={filteredData}
+        scroll={{ x: true }}
+        loading={isLoading}
         pagination={{
           showSizeChanger: true,
           defaultPageSize: 5,
+          onChange: (event, value) => setFilter({ ...filter, page: value }),
         }}
       />
     </AntdLayout>
