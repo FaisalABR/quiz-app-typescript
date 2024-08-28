@@ -1,3 +1,9 @@
+import { Typography } from "antd";
+
 export const AuthUser = ({ email }: { email: string }) => {
-  return <p className="text-white font-medium">Hi, {email}</p>;
+  return (
+    <Typography.Text style={{ color: "white", fontWeight: 500 }}>
+      Hi, {email}
+    </Typography.Text>
+  );
 };

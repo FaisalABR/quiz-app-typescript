@@ -2,14 +2,9 @@ import { theme } from "antd";
 
 import { Content } from "antd/es/layout/layout";
 import Title from "antd/es/typography/Title";
-import {
-  ModalUpdate,
-  ProductForm,
-  ProductTable,
-} from "../../Components/organism";
 import { AntdLayout } from "../../Layouts/AntdLayout";
 
-export const Product = () => {
+export const User = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -25,10 +20,7 @@ export const Product = () => {
           borderRadius: borderRadiusLG,
         }}
       >
-        <Title>CRUD Product</Title>
-        <ProductForm />
-        <ProductTable />
-        <ModalUpdate />
+        <Title>CRUD User</Title>
       </Content>
     </AntdLayout>
   );

@@ -1,9 +1,10 @@
+import { Typography } from "antd";
 import { StatProps } from "../../../Types";
 
-export const Stats = ({ className, label, amount }: StatProps) => {
+export const Stats = ({ color, label, amount }: StatProps) => {
   return (
-    <h1 className={`text-lg ${className ? className : ""}`}>
+    <Typography.Title level={5} style={{ color: color }}>
       {label}: {amount}
-    </h1>
+    </Typography.Title>
   );
 };
