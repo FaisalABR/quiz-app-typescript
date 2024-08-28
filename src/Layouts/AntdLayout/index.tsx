@@ -1,12 +1,28 @@
-import { Button, Layout, Menu, theme } from "antd";
+import { Button, Layout, Menu, MenuProps, theme } from "antd";
 import Sider from "antd/es/layout/Sider";
 import { NAV_ITEMS } from "../../Constants";
 import { Header } from "antd/es/layout/layout";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export const AntdLayout = ({ children }: { children: ReactNode }) => {
-  const [collapsed, setCollapsed] = useState(false);
+  const location = useLocation();
+  const [collapsed, setCollapsed] = useState<boolean>(false);
+  const [current, setCurrent] = useState<string>(location.pathname);
+  console.log(location.pathname);
+
+  useEffect(() => {
+    if (location) {
+      if (current !== location.pathname) {
+        setCurrent(location.pathname);
+      }
+    }
+  }, [location, current]);
+
+  const handleActiveMenu: MenuProps["onClick"] = (e) => {
+    setCurrent(e.key);
+  };
 
   const {
     token: { colorBgContainer },
@@ -22,9 +38,11 @@ export const AntdLayout = ({ children }: { children: ReactNode }) => {
       >
         <div className="demo-logo-vertical" />
         <Menu
+          onClick={handleActiveMenu}
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={["products-key"]}
+          selectedKeys={[current]}
+          defaultSelectedKeys={["/products"]}
           items={NAV_ITEMS}
         />
       </Sider>
