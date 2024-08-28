@@ -19,7 +19,6 @@ export interface QuizTypes {
 export interface IProps extends ButtonProps {
   href?: string;
   handleClick?: () => void;
-  text: string;
 }
 
 export interface StatProps {
@@ -153,4 +152,14 @@ export type ProductTypes = {
 export type AuthLoginTypes = {
   email: string;
   password: string;
+};
+
+export type TalentTypes = {
+  id: string;
+  nama: string;
+  divisi: string;
+  posisi: string;
+  salary: number;
+  status: string;
+  skills: string[];
 };

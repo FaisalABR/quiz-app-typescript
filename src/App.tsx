@@ -25,7 +25,7 @@ function App() {
         />
         <Route element={<Product />} path="/products" />
         <Route element={<Product />} path="/products/:productId" />
-        <Route element={<User />} path="/users/" />
+        <Route element={<User />} path="/talents" />
       </Routes>
       <ToastContainer />
     </>

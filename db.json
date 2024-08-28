@@ -52,5 +52,385 @@
       "correct_answer": "Charles Dickens",
       "incorrect_answers": ["Charles Darwin", "Mark Twain", "Roald Dahl"]
     }
+  ],
+  "talents": [
+    {
+      "id": "talent-1",
+      "nama": "Faisal Abu Bakar Riza",
+      "divisi": "IT Development",
+      "posisi": "Frontend Developer",
+      "salary": 20000000,
+      "status": "Idle",
+      "skills": ["react", "laravel"]
+    },
+    {
+      "id": "talent-2",
+      "nama": "Dinda Almira",
+      "divisi": "Research",
+      "posisi": "Data Analyst",
+      "salary": 20000000,
+      "status": "Idle",
+      "skills": ["react", "laravel"]
+    },
+    {
+      "id": "talent-3",
+      "nama": "Jack Qualyn",
+      "divisi": "IT Development",
+      "posisi": "Backend Developer",
+      "salary": 20000000,
+      "status": "Idle",
+      "skills": ["react", "laravel"]
+    },
+    {
+      "id": "talent-4",
+      "nama": "Sarah Mahendra",
+      "divisi": "IT Development",
+      "posisi": "Fullstack Developer",
+      "salary": 22000000,
+      "status": "Active",
+      "skills": ["node.js", "vue.js"]
+    },
+    {
+      "id": "talent-5",
+      "nama": "Lukas Amadeo",
+      "divisi": "Marketing",
+      "posisi": "SEO Specialist",
+      "salary": 18000000,
+      "status": "Idle",
+      "skills": ["seo", "content marketing"]
+    },
+    {
+      "id": "talent-6",
+      "nama": "Clara Han",
+      "divisi": "Design",
+      "posisi": "UI/UX Designer",
+      "salary": 21000000,
+      "status": "Active",
+      "skills": ["figma", "adobe xd"]
+    },
+    {
+      "id": "talent-7",
+      "nama": "Ivan Pratama",
+      "divisi": "IT Development",
+      "posisi": "Frontend Developer",
+      "salary": 19000000,
+      "status": "Idle",
+      "skills": ["react", "angular"]
+    },
+    {
+      "id": "talent-8",
+      "nama": "Rachel Lee",
+      "divisi": "Finance",
+      "posisi": "Financial Analyst",
+      "salary": 20000000,
+      "status": "Idle",
+      "skills": ["excel", "financial modeling"]
+    },
+    {
+      "id": "talent-9",
+      "nama": "Samuel Tan",
+      "divisi": "IT Development",
+      "posisi": "Backend Developer",
+      "salary": 22000000,
+      "status": "Active",
+      "skills": ["node.js", "express"]
+    },
+    {
+      "id": "talent-10",
+      "nama": "Alia Putri",
+      "divisi": "Research",
+      "posisi": "Data Scientist",
+      "salary": 23000000,
+      "status": "Idle",
+      "skills": ["python", "machine learning"]
+    },
+    {
+      "id": "talent-11",
+      "nama": "Andre Surya",
+      "divisi": "HR",
+      "posisi": "HR Manager",
+      "salary": 20000000,
+      "status": "Active",
+      "skills": ["recruitment", "employee relations"]
+    },
+    {
+      "id": "talent-12",
+      "nama": "Diana Kusuma",
+      "divisi": "Design",
+      "posisi": "Graphic Designer",
+      "salary": 18000000,
+      "status": "Idle",
+      "skills": ["photoshop", "illustrator"]
+    },
+    {
+      "id": "talent-13",
+      "nama": "Michael Lim",
+      "divisi": "IT Development",
+      "posisi": "DevOps Engineer",
+      "salary": 23000000,
+      "status": "Idle",
+      "skills": ["docker", "kubernetes"]
+    },
+    {
+      "id": "talent-14",
+      "nama": "Siti Aisyah",
+      "divisi": "Sales",
+      "posisi": "Sales Executive",
+      "salary": 19000000,
+      "status": "Active",
+      "skills": ["negotiation", "crm"]
+    },
+    {
+      "id": "talent-15",
+      "nama": "Rizky Alif",
+      "divisi": "IT Development",
+      "posisi": "Fullstack Developer",
+      "salary": 22000000,
+      "status": "Idle",
+      "skills": ["laravel", "vue.js"]
+    },
+    {
+      "id": "talent-16",
+      "nama": "Nina Saraswati",
+      "divisi": "Marketing",
+      "posisi": "Content Creator",
+      "salary": 18000000,
+      "status": "Active",
+      "skills": ["content writing", "social media"]
+    },
+    {
+      "id": "talent-17",
+      "nama": "Yusuf Maulana",
+      "divisi": "Finance",
+      "posisi": "Accountant",
+      "salary": 20000000,
+      "status": "Idle",
+      "skills": ["tax", "budgeting"]
+    },
+    {
+      "id": "talent-18",
+      "nama": "Karen Wong",
+      "divisi": "IT Development",
+      "posisi": "Frontend Developer",
+      "salary": 21000000,
+      "status": "Active",
+      "skills": ["react", "tailwind"]
+    },
+    {
+      "id": "talent-19",
+      "nama": "Irfan Hamzah",
+      "divisi": "IT Development",
+      "posisi": "Backend Developer",
+      "salary": 22000000,
+      "status": "Idle",
+      "skills": ["golang", "mysql"]
+    },
+    {
+      "id": "talent-20",
+      "nama": "Julia Lestari",
+      "divisi": "Design",
+      "posisi": "UI/UX Designer",
+      "salary": 21000000,
+      "status": "Idle",
+      "skills": ["sketch", "figma"]
+    },
+    {
+      "id": "talent-21",
+      "nama": "Arif Ramadhan",
+      "divisi": "IT Development",
+      "posisi": "Mobile Developer",
+      "salary": 23000000,
+      "status": "Active",
+      "skills": ["flutter", "react native"]
+    },
+    {
+      "id": "talent-22",
+      "nama": "Dewi Puspita",
+      "divisi": "Research",
+      "posisi": "Data Analyst",
+      "salary": 20000000,
+      "status": "Idle",
+      "skills": ["python", "r"]
+    },
+    {
+      "id": "talent-23",
+      "nama": "Budi Santoso",
+      "divisi": "Sales",
+      "posisi": "Account Manager",
+      "salary": 21000000,
+      "status": "Active",
+      "skills": ["crm", "salesforce"]
+    },
+    {
+      "id": "talent-24",
+      "nama": "Lena Aditya",
+      "divisi": "IT Development",
+      "posisi": "DevOps Engineer",
+      "salary": 23000000,
+      "status": "Idle",
+      "skills": ["jenkins", "docker"]
+    },
+    {
+      "id": "talent-25",
+      "nama": "David Hartono",
+      "divisi": "Design",
+      "posisi": "Graphic Designer",
+      "salary": 18000000,
+      "status": "Idle",
+      "skills": ["illustrator", "indesign"]
+    },
+    {
+      "id": "talent-26",
+      "nama": "Farah Maharani",
+      "divisi": "HR",
+      "posisi": "Recruitment Specialist",
+      "salary": 20000000,
+      "status": "Active",
+      "skills": ["interviewing", "headhunting"]
+    },
+    {
+      "id": "talent-27",
+      "nama": "Kevin Tan",
+      "divisi": "IT Development",
+      "posisi": "Fullstack Developer",
+      "salary": 22000000,
+      "status": "Idle",
+      "skills": ["django", "react"]
+    },
+    {
+      "id": "talent-28",
+      "nama": "Sofian Nugraha",
+      "divisi": "IT Development",
+      "posisi": "Frontend Developer",
+      "salary": 21000000,
+      "status": "Active",
+      "skills": ["vue.js", "tailwind"]
+    },
+    {
+      "id": "talent-29",
+      "nama": "Elisa Pratiwi",
+      "divisi": "Research",
+      "posisi": "Data Scientist",
+      "salary": 23000000,
+      "status": "Idle",
+      "skills": ["sql", "data visualization"]
+    },
+    {
+      "id": "talent-30",
+      "nama": "Ahmad Fikri",
+      "divisi": "IT Development",
+      "posisi": "Backend Developer",
+      "salary": 22000000,
+      "status": "Idle",
+      "skills": ["php", "laravel"]
+    },
+    {
+      "id": "talent-31",
+      "nama": "Rina Surya",
+      "divisi": "Marketing",
+      "posisi": "Digital Marketer",
+      "salary": 19000000,
+      "status": "Active",
+      "skills": ["google ads", "facebook ads"]
+    },
+    {
+      "id": "talent-32",
+      "nama": "Tommy Wijaya",
+      "divisi": "Finance",
+      "posisi": "Financial Analyst",
+      "salary": 20000000,
+      "status": "Idle",
+      "skills": ["excel", "forecasting"]
+    },
+    {
+      "id": "talent-33",
+      "nama": "Maya Sari",
+      "divisi": "IT Development",
+      "posisi": "Frontend Developer",
+      "salary": 21000000,
+      "status": "Idle",
+      "skills": ["angular", "sass"]
+    },
+    {
+      "id": "talent-34",
+      "nama": "Reza Anggara",
+      "divisi": "IT Development",
+      "posisi": "Backend Developer",
+      "salary": 22000000,
+      "status": "Active",
+      "skills": ["node.js", "mongodb"]
+    },
+    {
+      "id": "talent-35",
+      "nama": "Zahra Alia",
+      "divisi": "Design",
+      "posisi": "UI/UX Designer",
+      "salary": 21000000,
+      "status": "Idle",
+      "skills": ["adobe xd", "figma"]
+    },
+    {
+      "id": "talent-36",
+      "nama": "Hendra Wijaya",
+      "divisi": "Sales",
+      "posisi": "Sales Manager",
+      "salary": 22000000,
+      "status": "Active",
+      "skills": ["leadership", "crm"]
+    },
+    {
+      "id": "talent-37",
+      "nama": "Siti Rahmawati",
+      "divisi": "HR",
+      "posisi": "HR Generalist",
+      "salary": 20000000,
+      "status": "Idle",
+      "skills": ["payroll", "employee relations"]
+    },
+    {
+      "id": "talent-38",
+      "nama": "Toni Wahyu",
+      "divisi": "IT Development",
+      "posisi": "Mobile Developer",
+      "salary": 23000000,
+      "status": "Idle",
+      "skills": ["kotlin", "swift"]
+    },
+    {
+      "id": "talent-39",
+      "nama": "Dewi Indah",
+      "divisi": "Marketing",
+      "posisi": "Content Strategist",
+      "salary": 19000000,
+      "status": "Active",
+      "skills": ["content marketing", "seo"]
+    },
+    {
+      "id": "talent-40",
+      "nama": "Rizal Mahendra",
+      "divisi": "IT Development",
+      "posisi": "Frontend Developer",
+      "salary": 21000000,
+      "status": "Idle",
+      "skills": ["react", "redux"]
+    },
+    {
+      "id": "talent-41",
+      "nama": "Linda Astuti",
+      "divisi": "Design",
+      "posisi": "Graphic Designer",
+      "salary": 18000000,
+      "status": "Idle",
+      "skills": ["coreldraw", "photoshop"]
+    },
+    {
+      "id": "talent-42",
+      "nama": "Ari Suryono",
+      "divisi": "Research",
+      "posisi": "Data Analyst",
+      "salary": 20000000,
+      "status": "Active",
+      "skills": ["excel", "tableau"]
+    }
   ]
 }

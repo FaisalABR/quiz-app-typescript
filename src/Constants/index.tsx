@@ -119,8 +119,8 @@ export const NAV_ITEMS = [
     label: <Link to="/products">Products</Link>,
   },
   {
-    key: "/users",
+    key: "/talents",
     icon: <UserOutlined />,
-    label: <Link to="/users">User</Link>,
+    label: <Link to="/talents">Talents</Link>,
   },
 ];
