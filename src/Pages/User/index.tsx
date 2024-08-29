@@ -134,11 +134,16 @@ export const User = () => {
       key: "action",
       render: () => (
         <Space>
-          <Button icon={<DeleteOutlined />} danger>
+          <Button type="primary" icon={<DeleteOutlined />} danger>
             {" "}
             Delete
           </Button>
-          <Button icon={<EditOutlined />}>Edit</Button>
+          <Button
+            style={{ backgroundColor: "#faad14", borderColor: "#faad14" }}
+            icon={<EditOutlined />}
+          >
+            Edit
+          </Button>
         </Space>
       ),
     },
