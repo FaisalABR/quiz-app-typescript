@@ -1,5 +1,5 @@
 import Title from "antd/es/typography/Title";
-import { AntdLayout } from "../../Layouts/AntdLayout";
+import { AntdLayout } from "@/Layouts/AntdLayout";
 import {
   message,
   Select,
@@ -9,28 +9,29 @@ import {
   Tag,
   Input,
   Drawer,
+  Flex,
 } from "antd";
-import { Button } from "../../Components/atoms";
+import { Button } from "@/Components/atoms";
 import {
   DeleteOutlined,
   EditOutlined,
   FilterOutlined,
   PlusSquareOutlined,
 } from "@ant-design/icons";
-import { TalentTypes } from "../../Types";
-import { formatCurrency } from "../../Utils/utils";
+import { formatCurrency } from "@/Utils/utils";
 import type { GetProps } from "antd";
 import { useQuery } from "@tanstack/react-query";
-import { fetchTalents } from "../../Services/talents";
+import { fetchTalents } from "@/Services/talents";
 import { useEffect, useState } from "react";
-import { SELECT_DIVISI, SELECT_POSISI } from "../../Constants";
+import { SELECT_DIVISI, SELECT_POSISI } from "@/Constants";
 import { useNavigate } from "react-router-dom";
-import { useMobile } from "../../Hooks/useMobile";
+import { useMobile } from "@/Hooks/useMobile";
+import { TalentTypes } from "@/Types";
 
 type SearchProps = GetProps<typeof Input.Search>;
 const { Search } = Input;
 
-export const User = () => {
+export const Talent = () => {
   const navigate = useNavigate();
   const currentQueryParams = new URLSearchParams();
   const [filter, setFilter] = useState({
@@ -165,11 +166,10 @@ export const User = () => {
 
   return (
     <AntdLayout>
-      <div
+      <Flex
+        align="center"
+        justify="space-between"
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
           marginBottom: "2rem",
         }}
       >
@@ -183,8 +183,8 @@ export const User = () => {
         >
           Create Talent
         </Button>
-      </div>
-      <div style={{ display: "flex", gap: "0.5rem", marginBottom: "2rem" }}>
+      </Flex>
+      <Flex gap="middle" style={{ marginBottom: "2rem" }}>
         {isMobile ? (
           <Button
             icon={<FilterOutlined />}
@@ -213,7 +213,7 @@ export const User = () => {
           onSearch={onSearch}
           style={{ width: isMobile ? "90%" : "50%" }}
         />
-      </div>
+      </Flex>
 
       <Table
         columns={COLUMNS_NAME}
@@ -231,10 +231,9 @@ export const User = () => {
         onClose={() => setOpenDrawer(false)}
         open={openDrawer}
       >
-        <div
+        <Flex
+          vertical
           style={{
-            display: "flex",
-            flexDirection: "column",
             marginBottom: "1rem",
           }}
         >
@@ -246,7 +245,7 @@ export const User = () => {
             allowClear
             options={SELECT_DIVISI}
           />
-        </div>
+        </Flex>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <Title level={5}>Posisi</Title>
           <Select

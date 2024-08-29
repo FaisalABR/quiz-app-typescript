@@ -1,4 +1,4 @@
-import { ChildrenTypes } from "../Types";
+import { ChildrenTypes } from "@/Types";
 
 export const QuizLayout = ({ children }: ChildrenTypes) => {
   return (

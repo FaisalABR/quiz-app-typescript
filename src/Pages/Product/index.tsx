@@ -1,10 +1,6 @@
 import Title from "antd/es/typography/Title";
-import {
-  ModalUpdate,
-  ProductForm,
-  ProductTable,
-} from "../../Components/organism";
-import { AntdLayout } from "../../Layouts/AntdLayout";
+import { ModalUpdate, ProductForm, ProductTable } from "@/Components/organism";
+import { AntdLayout } from "@/Layouts/AntdLayout";
 
 export const Product = () => {
   return (

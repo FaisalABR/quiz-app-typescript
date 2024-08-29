@@ -1,6 +1,6 @@
 import { Button, ConfigProvider, Layout, Menu, MenuProps, theme } from "antd";
 import Sider from "antd/es/layout/Sider";
-import { NAV_ITEMS } from "../../Constants";
+import { NAV_ITEMS } from "@/Constants";
 import { Content, Header } from "antd/es/layout/layout";
 import {
   CloseOutlined,

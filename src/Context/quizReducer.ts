@@ -1,5 +1,5 @@
 // import { Reducer } from "react";
-import { QuizActionType, QuizStateTypes } from "../Types";
+import { QuizActionType, QuizStateTypes } from "@/Types";
 
 export const quizReducer = (
   state: QuizStateTypes,
