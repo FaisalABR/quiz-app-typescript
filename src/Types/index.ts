@@ -156,6 +156,7 @@ export type AuthLoginTypes = {
 
 export type TalentTypes = {
   id: string;
+  key?: string;
   nama: string;
   divisi: string;
   posisi: string;

@@ -10,12 +10,13 @@ import {
 import { ReactNode, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { siderThemeConfig } from "../../Utils/theme";
+import { useMobile } from "../../Hooks/useMobile";
 
 export const AntdLayout = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
   const [collapsed, setCollapsed] = useState<boolean>(true);
   const [current, setCurrent] = useState<string>(location.pathname);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const { isMobile } = useMobile();
 
   useEffect(() => {
     if (location) {
@@ -24,17 +25,6 @@ export const AntdLayout = ({ children }: { children: ReactNode }) => {
       }
     }
   }, [location, current]);
-
-  useEffect(() => {
-    const handleScreen = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleScreen);
-    handleScreen();
-
-    return window.removeEventListener("resize", handleScreen);
-  }, [window.innerWidth]);
 
   const handleActiveMenu: MenuProps["onClick"] = (e) => {
     setCurrent(e.key);

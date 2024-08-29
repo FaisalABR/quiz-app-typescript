@@ -126,15 +126,25 @@ export const NAV_ITEMS = [
 ];
 
 export const SELECT_POSISI = [
-  { value: "Frontend Developer", label: "Frontend" },
-  { value: "Backend Developer", label: "Backend" },
-  { value: "Mobile Developer", label: "Mobile" },
-  { value: "Quality Assurance", label: "Quality Assurance" },
+  { value: "Frontend Developer", label: "Frontend Developer" },
+  { value: "Backend Developer", label: "Backend Developer" },
+  { value: "Mobile Developer", label: "Mobile Developer" },
+  { value: "Fullstack Developer", label: "Fullstack Developer" },
+  { value: "DevOps Engineer", label: "DevOps Engineer" },
+  { value: "Data Analyst", label: "Data Analyst" },
+  { value: "UI/UX Designer", label: "UI/UX Designer" },
+  { value: "Graphic Designer", label: "Graphic Designer" },
+  { value: "Sales Manager", label: "Sales Manager" },
+  { value: "Sales Executive", label: "Sales Executive" },
+  { value: "HR Generalist", label: "HR Generalist" },
+  { value: "Content Strategist", label: "Content Strategist" },
 ];
 
 export const SELECT_DIVISI = [
   { value: "IT Development", label: "IT Development" },
+  { value: "Research", label: "Research" },
+  { value: "Design", label: "Design" },
+  { value: "Sales", label: "Sales" },
+  { value: "HR", label: "HR" },
   { value: "Marketing", label: "Marketing" },
-  { value: "Finance", label: "Finance" },
-  { value: "IT Network", label: "IT Network" },
 ];

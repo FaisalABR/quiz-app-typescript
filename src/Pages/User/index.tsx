@@ -1,7 +1,6 @@
 import Title from "antd/es/typography/Title";
 import { AntdLayout } from "../../Layouts/AntdLayout";
 import {
-  Flex,
   message,
   Select,
   Space,
@@ -9,11 +8,13 @@ import {
   TableProps,
   Tag,
   Input,
+  Drawer,
 } from "antd";
 import { Button } from "../../Components/atoms";
 import {
   DeleteOutlined,
   EditOutlined,
+  FilterOutlined,
   PlusSquareOutlined,
 } from "@ant-design/icons";
 import { TalentTypes } from "../../Types";
@@ -24,6 +25,7 @@ import { fetchTalents } from "../../Services/talents";
 import { useEffect, useState } from "react";
 import { SELECT_DIVISI, SELECT_POSISI } from "../../Constants";
 import { useNavigate } from "react-router-dom";
+import { useMobile } from "../../Hooks/useMobile";
 
 type SearchProps = GetProps<typeof Input.Search>;
 const { Search } = Input;
@@ -37,17 +39,24 @@ export const User = () => {
     query: currentQueryParams.get("query") || "",
     page: 1,
   });
+  const [openDrawer, setOpenDrawer] = useState<boolean>(false);
+  const { isMobile } = useMobile();
+  console.log("isMobile >>>", isMobile);
+
   const { isLoading, data, isError } = useQuery({
     queryKey: ["talents", filter],
     queryFn: () => fetchTalents(filter),
   });
 
-  console.log(filter);
-
   // Filtered data base on search query
-  const filteredData = data?.filter((item: TalentTypes) =>
-    item.nama.toLowerCase().includes(filter.query.toLowerCase())
-  );
+  const filteredData = data
+    ?.map((item: TalentTypes) => ({
+      ...item,
+      key: item.id,
+    }))
+    .filter((item: TalentTypes) =>
+      item.nama.toLowerCase().includes(filter.query.toLowerCase())
+    );
 
   // Handling Error
   useEffect(() => {
@@ -152,10 +161,13 @@ export const User = () => {
 
   return (
     <AntdLayout>
-      <Flex
-        align="center"
-        justify="space-between"
-        style={{ marginBottom: "2rem" }}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          marginBottom: "2rem",
+        }}
       >
         <Title level={2} style={{ marginBottom: 0 }}>
           Talents
@@ -167,28 +179,37 @@ export const User = () => {
         >
           Create Talent
         </Button>
-      </Flex>
-      <Flex style={{ marginBottom: "2rem" }} gap="small">
-        <Select
-          style={{ width: "25%" }}
-          onChange={(value) => handleSelectChange("divisi", value ?? "")}
-          placeholder="Divisi"
-          allowClear
-          options={SELECT_DIVISI}
-        />
-        <Select
-          style={{ width: "25%" }}
-          onChange={(value) => handleSelectChange("posisi", value ?? "")}
-          placeholder="Posisi"
-          allowClear
-          options={SELECT_POSISI}
-        />
+      </div>
+      <div style={{ display: "flex", gap: "0.5rem", marginBottom: "2rem" }}>
+        {isMobile ? (
+          <Button
+            icon={<FilterOutlined />}
+            handleClick={() => setOpenDrawer(true)}
+          />
+        ) : (
+          <>
+            <Select
+              style={{ width: "25%" }}
+              onChange={(value) => handleSelectChange("divisi", value ?? "")}
+              placeholder="Divisi"
+              allowClear
+              options={SELECT_DIVISI}
+            />
+            <Select
+              style={{ width: "25%" }}
+              onChange={(value) => handleSelectChange("posisi", value ?? "")}
+              placeholder="Posisi"
+              allowClear
+              options={SELECT_POSISI}
+            />
+          </>
+        )}
         <Search
           placeholder="input search text"
           onSearch={onSearch}
-          style={{ width: "50%" }}
+          style={{ width: isMobile ? "90%" : "50%" }}
         />
-      </Flex>
+      </div>
 
       <Table
         columns={COLUMNS_NAME}
@@ -198,9 +219,41 @@ export const User = () => {
         pagination={{
           showSizeChanger: true,
           defaultPageSize: 5,
-          onChange: (event, value) => setFilter({ ...filter, page: value }),
+          onChange: (page, pageSize) => setFilter({ ...filter, page: page }),
         }}
       />
+      <Drawer
+        title="Filter Talents"
+        onClose={() => setOpenDrawer(false)}
+        open={openDrawer}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            marginBottom: "1rem",
+          }}
+        >
+          <Title level={5}>Divisi</Title>
+          <Select
+            style={{ width: "100%" }}
+            onChange={(value) => handleSelectChange("divisi", value ?? "")}
+            placeholder="Divisi"
+            allowClear
+            options={SELECT_DIVISI}
+          />
+        </div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <Title level={5}>Posisi</Title>
+          <Select
+            style={{ width: "100%" }}
+            onChange={(value) => handleSelectChange("posisi", value ?? "")}
+            placeholder="Posisi"
+            allowClear
+            options={SELECT_POSISI}
+          />
+        </div>
+      </Drawer>
     </AntdLayout>
   );
 };
