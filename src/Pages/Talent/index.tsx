@@ -10,6 +10,7 @@ import {
   Input,
   Drawer,
   Flex,
+  Modal,
 } from "antd";
 import { Button } from "@/Components/atoms";
 import {
@@ -20,8 +21,8 @@ import {
 } from "@ant-design/icons";
 import { formatCurrency } from "@/Utils/utils";
 import type { GetProps } from "antd";
-import { useQuery } from "@tanstack/react-query";
-import { fetchTalents } from "@/Services/talents";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { deleteTalent, fetchTalents } from "@/Services/talents";
 import { useEffect, useState } from "react";
 import { SELECT_DIVISI, SELECT_POSISI } from "@/Constants";
 import { useNavigate } from "react-router-dom";
@@ -40,12 +41,27 @@ export const Talent = () => {
     query: currentQueryParams.get("query") || "",
     page: 1,
   });
+  const [openDelete, setOpenDelete] = useState<boolean>(false);
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
   const { isMobile } = useMobile();
+  const [selectedId, setSelectedId] = useState<string>("");
+  const queryClient = useQueryClient();
 
   const { isLoading, data, isError } = useQuery({
     queryKey: ["talents", filter],
     queryFn: () => fetchTalents(filter),
+  });
+
+  const deleteMutation = useMutation({
+    mutationFn: deleteTalent,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["talents"] });
+      message.success("Hapus talent berhasil!");
+      setOpenDelete(false);
+    },
+    onError: () => {
+      message.error("Hapus talent gagal!");
+    },
   });
 
   // Filtered data base on search query
@@ -133,9 +149,17 @@ export const Talent = () => {
     {
       title: "Action",
       key: "action",
-      render: () => (
+      render: (__, record) => (
         <Space>
-          <Button type="primary" icon={<DeleteOutlined />} danger>
+          <Button
+            type="primary"
+            icon={<DeleteOutlined />}
+            danger
+            handleClick={() => {
+              setOpenDelete(true);
+              setSelectedId(record.id);
+            }}
+          >
             {" "}
             Delete
           </Button>
@@ -257,6 +281,31 @@ export const Talent = () => {
           />
         </div>
       </Drawer>
+      <Modal
+        title="Are you sure want to delete?"
+        open={openDelete}
+        onCancel={() => {
+          setOpenDelete(false);
+          setSelectedId("");
+        }}
+        footer={[
+          <Button
+            handleClick={() => {
+              setOpenDelete(false);
+              setSelectedId("");
+            }}
+          >
+            Cancel
+          </Button>,
+          <Button
+            type="primary"
+            danger
+            handleClick={() => deleteMutation.mutate(selectedId)}
+          >
+            OK
+          </Button>,
+        ]}
+      ></Modal>
     </AntdLayout>
   );
 };

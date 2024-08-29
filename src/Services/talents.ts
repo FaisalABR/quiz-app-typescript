@@ -25,3 +25,21 @@ export const fetchTalents = async (filter: FilterProps) => {
     throw e;
   }
 };
+
+export const deleteTalent = async (talentId: string) => {
+  try {
+    const res = await axios.delete(
+      `http://localhost:3000/talents/${talentId}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    return res.data;
+  } catch (e) {
+    console.error(e);
+    throw e;
+  }
+};

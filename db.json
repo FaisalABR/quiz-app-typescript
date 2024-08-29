@@ -10,7 +10,8 @@
         "The Sign of the Four",
         "A Case of Identity",
         "The Doings of Raffles Haw"
-      ]
+      ],
+      "id": "0f0e"
     },
     {
       "type": "multiple",
@@ -18,7 +19,12 @@
       "category": "Entertainment: Books",
       "question": "Who was the author of the 1954 novel, &quot;Lord of the Flies&quot;?",
       "correct_answer": "William Golding",
-      "incorrect_answers": ["Stephen King", "F. Scott Fitzgerald", "Hunter Fox"]
+      "incorrect_answers": [
+        "Stephen King",
+        "F. Scott Fitzgerald",
+        "Hunter Fox"
+      ],
+      "id": "81d6"
     },
     {
       "type": "multiple",
@@ -30,7 +36,8 @@
         "Neo-Bolshevism",
         "Obliteration of the Self",
         "Earth Alliance"
-      ]
+      ],
+      "id": "4f05"
     },
     {
       "type": "multiple",
@@ -42,7 +49,8 @@
         "The Chamber of Secrets",
         "The Prisoner of Azkaban",
         "The Deathly Hallows"
-      ]
+      ],
+      "id": "221e"
     },
     {
       "type": "multiple",
@@ -50,7 +58,12 @@
       "category": "Entertainment: Books",
       "question": "Who wrote &quot;A Tale of Two Cities&quot;?",
       "correct_answer": "Charles Dickens",
-      "incorrect_answers": ["Charles Darwin", "Mark Twain", "Roald Dahl"]
+      "incorrect_answers": [
+        "Charles Darwin",
+        "Mark Twain",
+        "Roald Dahl"
+      ],
+      "id": "5793"
     }
   ],
   "talents": [
@@ -61,7 +74,10 @@
       "posisi": "Frontend Developer",
       "salary": 20000000,
       "status": "Idle",
-      "skills": ["react", "laravel"]
+      "skills": [
+        "react",
+        "laravel"
+      ]
     },
     {
       "id": "talent-2",
@@ -70,7 +86,10 @@
       "posisi": "Data Analyst",
       "salary": 20000000,
       "status": "Idle",
-      "skills": ["react", "laravel"]
+      "skills": [
+        "react",
+        "laravel"
+      ]
     },
     {
       "id": "talent-3",
@@ -79,7 +98,10 @@
       "posisi": "Backend Developer",
       "salary": 20000000,
       "status": "Idle",
-      "skills": ["react", "laravel"]
+      "skills": [
+        "react",
+        "laravel"
+      ]
     },
     {
       "id": "talent-4",
@@ -88,7 +110,10 @@
       "posisi": "Fullstack Developer",
       "salary": 22000000,
       "status": "Active",
-      "skills": ["node.js", "vue.js"]
+      "skills": [
+        "node.js",
+        "vue.js"
+      ]
     },
     {
       "id": "talent-5",
@@ -97,7 +122,10 @@
       "posisi": "SEO Specialist",
       "salary": 18000000,
       "status": "Idle",
-      "skills": ["seo", "content marketing"]
+      "skills": [
+        "seo",
+        "content marketing"
+      ]
     },
     {
       "id": "talent-6",
@@ -106,7 +134,10 @@
       "posisi": "UI/UX Designer",
       "salary": 21000000,
       "status": "Active",
-      "skills": ["figma", "adobe xd"]
+      "skills": [
+        "figma",
+        "adobe xd"
+      ]
     },
     {
       "id": "talent-7",
@@ -115,7 +146,10 @@
       "posisi": "Frontend Developer",
       "salary": 19000000,
       "status": "Idle",
-      "skills": ["react", "angular"]
+      "skills": [
+        "react",
+        "angular"
+      ]
     },
     {
       "id": "talent-8",
@@ -124,7 +158,10 @@
       "posisi": "Financial Analyst",
       "salary": 20000000,
       "status": "Idle",
-      "skills": ["excel", "financial modeling"]
+      "skills": [
+        "excel",
+        "financial modeling"
+      ]
     },
     {
       "id": "talent-9",
@@ -133,7 +170,10 @@
       "posisi": "Backend Developer",
       "salary": 22000000,
       "status": "Active",
-      "skills": ["node.js", "express"]
+      "skills": [
+        "node.js",
+        "express"
+      ]
     },
     {
       "id": "talent-10",
@@ -142,7 +182,10 @@
       "posisi": "Data Scientist",
       "salary": 23000000,
       "status": "Idle",
-      "skills": ["python", "machine learning"]
+      "skills": [
+        "python",
+        "machine learning"
+      ]
     },
     {
       "id": "talent-11",
@@ -151,7 +194,10 @@
       "posisi": "HR Manager",
       "salary": 20000000,
       "status": "Active",
-      "skills": ["recruitment", "employee relations"]
+      "skills": [
+        "recruitment",
+        "employee relations"
+      ]
     },
     {
       "id": "talent-12",
@@ -160,7 +206,10 @@
       "posisi": "Graphic Designer",
       "salary": 18000000,
       "status": "Idle",
-      "skills": ["photoshop", "illustrator"]
+      "skills": [
+        "photoshop",
+        "illustrator"
+      ]
     },
     {
       "id": "talent-13",
@@ -169,7 +218,10 @@
       "posisi": "DevOps Engineer",
       "salary": 23000000,
       "status": "Idle",
-      "skills": ["docker", "kubernetes"]
+      "skills": [
+        "docker",
+        "kubernetes"
+      ]
     },
     {
       "id": "talent-14",
@@ -178,7 +230,10 @@
       "posisi": "Sales Executive",
       "salary": 19000000,
       "status": "Active",
-      "skills": ["negotiation", "crm"]
+      "skills": [
+        "negotiation",
+        "crm"
+      ]
     },
     {
       "id": "talent-15",
@@ -187,7 +242,10 @@
       "posisi": "Fullstack Developer",
       "salary": 22000000,
       "status": "Idle",
-      "skills": ["laravel", "vue.js"]
+      "skills": [
+        "laravel",
+        "vue.js"
+      ]
     },
     {
       "id": "talent-16",
@@ -196,7 +254,10 @@
       "posisi": "Content Creator",
       "salary": 18000000,
       "status": "Active",
-      "skills": ["content writing", "social media"]
+      "skills": [
+        "content writing",
+        "social media"
+      ]
     },
     {
       "id": "talent-17",
@@ -205,7 +266,10 @@
       "posisi": "Accountant",
       "salary": 20000000,
       "status": "Idle",
-      "skills": ["tax", "budgeting"]
+      "skills": [
+        "tax",
+        "budgeting"
+      ]
     },
     {
       "id": "talent-18",
@@ -214,7 +278,10 @@
       "posisi": "Frontend Developer",
       "salary": 21000000,
       "status": "Active",
-      "skills": ["react", "tailwind"]
+      "skills": [
+        "react",
+        "tailwind"
+      ]
     },
     {
       "id": "talent-19",
@@ -223,7 +290,10 @@
       "posisi": "Backend Developer",
       "salary": 22000000,
       "status": "Idle",
-      "skills": ["golang", "mysql"]
+      "skills": [
+        "golang",
+        "mysql"
+      ]
     },
     {
       "id": "talent-20",
@@ -232,7 +302,10 @@
       "posisi": "UI/UX Designer",
       "salary": 21000000,
       "status": "Idle",
-      "skills": ["sketch", "figma"]
+      "skills": [
+        "sketch",
+        "figma"
+      ]
     },
     {
       "id": "talent-21",
@@ -241,7 +314,10 @@
       "posisi": "Mobile Developer",
       "salary": 23000000,
       "status": "Active",
-      "skills": ["flutter", "react native"]
+      "skills": [
+        "flutter",
+        "react native"
+      ]
     },
     {
       "id": "talent-22",
@@ -250,7 +326,10 @@
       "posisi": "Data Analyst",
       "salary": 20000000,
       "status": "Idle",
-      "skills": ["python", "r"]
+      "skills": [
+        "python",
+        "r"
+      ]
     },
     {
       "id": "talent-23",
@@ -259,7 +338,10 @@
       "posisi": "Account Manager",
       "salary": 21000000,
       "status": "Active",
-      "skills": ["crm", "salesforce"]
+      "skills": [
+        "crm",
+        "salesforce"
+      ]
     },
     {
       "id": "talent-24",
@@ -268,7 +350,10 @@
       "posisi": "DevOps Engineer",
       "salary": 23000000,
       "status": "Idle",
-      "skills": ["jenkins", "docker"]
+      "skills": [
+        "jenkins",
+        "docker"
+      ]
     },
     {
       "id": "talent-25",
@@ -277,7 +362,10 @@
       "posisi": "Graphic Designer",
       "salary": 18000000,
       "status": "Idle",
-      "skills": ["illustrator", "indesign"]
+      "skills": [
+        "illustrator",
+        "indesign"
+      ]
     },
     {
       "id": "talent-26",
@@ -286,7 +374,10 @@
       "posisi": "Recruitment Specialist",
       "salary": 20000000,
       "status": "Active",
-      "skills": ["interviewing", "headhunting"]
+      "skills": [
+        "interviewing",
+        "headhunting"
+      ]
     },
     {
       "id": "talent-27",
@@ -295,7 +386,10 @@
       "posisi": "Fullstack Developer",
       "salary": 22000000,
       "status": "Idle",
-      "skills": ["django", "react"]
+      "skills": [
+        "django",
+        "react"
+      ]
     },
     {
       "id": "talent-28",
@@ -304,7 +398,10 @@
       "posisi": "Frontend Developer",
       "salary": 21000000,
       "status": "Active",
-      "skills": ["vue.js", "tailwind"]
+      "skills": [
+        "vue.js",
+        "tailwind"
+      ]
     },
     {
       "id": "talent-29",
@@ -313,7 +410,10 @@
       "posisi": "Data Scientist",
       "salary": 23000000,
       "status": "Idle",
-      "skills": ["sql", "data visualization"]
+      "skills": [
+        "sql",
+        "data visualization"
+      ]
     },
     {
       "id": "talent-30",
@@ -322,7 +422,10 @@
       "posisi": "Backend Developer",
       "salary": 22000000,
       "status": "Idle",
-      "skills": ["php", "laravel"]
+      "skills": [
+        "php",
+        "laravel"
+      ]
     },
     {
       "id": "talent-31",
@@ -331,7 +434,10 @@
       "posisi": "Digital Marketer",
       "salary": 19000000,
       "status": "Active",
-      "skills": ["google ads", "facebook ads"]
+      "skills": [
+        "google ads",
+        "facebook ads"
+      ]
     },
     {
       "id": "talent-32",
@@ -340,7 +446,10 @@
       "posisi": "Financial Analyst",
       "salary": 20000000,
       "status": "Idle",
-      "skills": ["excel", "forecasting"]
+      "skills": [
+        "excel",
+        "forecasting"
+      ]
     },
     {
       "id": "talent-33",
@@ -349,7 +458,10 @@
       "posisi": "Frontend Developer",
       "salary": 21000000,
       "status": "Idle",
-      "skills": ["angular", "sass"]
+      "skills": [
+        "angular",
+        "sass"
+      ]
     },
     {
       "id": "talent-34",
@@ -358,7 +470,10 @@
       "posisi": "Backend Developer",
       "salary": 22000000,
       "status": "Active",
-      "skills": ["node.js", "mongodb"]
+      "skills": [
+        "node.js",
+        "mongodb"
+      ]
     },
     {
       "id": "talent-35",
@@ -367,7 +482,10 @@
       "posisi": "UI/UX Designer",
       "salary": 21000000,
       "status": "Idle",
-      "skills": ["adobe xd", "figma"]
+      "skills": [
+        "adobe xd",
+        "figma"
+      ]
     },
     {
       "id": "talent-36",
@@ -376,7 +494,10 @@
       "posisi": "Sales Manager",
       "salary": 22000000,
       "status": "Active",
-      "skills": ["leadership", "crm"]
+      "skills": [
+        "leadership",
+        "crm"
+      ]
     },
     {
       "id": "talent-37",
@@ -385,7 +506,10 @@
       "posisi": "HR Generalist",
       "salary": 20000000,
       "status": "Idle",
-      "skills": ["payroll", "employee relations"]
+      "skills": [
+        "payroll",
+        "employee relations"
+      ]
     },
     {
       "id": "talent-38",
@@ -394,7 +518,10 @@
       "posisi": "Mobile Developer",
       "salary": 23000000,
       "status": "Idle",
-      "skills": ["kotlin", "swift"]
+      "skills": [
+        "kotlin",
+        "swift"
+      ]
     },
     {
       "id": "talent-39",
@@ -403,7 +530,10 @@
       "posisi": "Content Strategist",
       "salary": 19000000,
       "status": "Active",
-      "skills": ["content marketing", "seo"]
+      "skills": [
+        "content marketing",
+        "seo"
+      ]
     },
     {
       "id": "talent-40",
@@ -412,25 +542,10 @@
       "posisi": "Frontend Developer",
       "salary": 21000000,
       "status": "Idle",
-      "skills": ["react", "redux"]
-    },
-    {
-      "id": "talent-41",
-      "nama": "Linda Astuti",
-      "divisi": "Design",
-      "posisi": "Graphic Designer",
-      "salary": 18000000,
-      "status": "Idle",
-      "skills": ["coreldraw", "photoshop"]
-    },
-    {
-      "id": "talent-42",
-      "nama": "Ari Suryono",
-      "divisi": "Research",
-      "posisi": "Data Analyst",
-      "salary": 20000000,
-      "status": "Active",
-      "skills": ["excel", "tableau"]
+      "skills": [
+        "react",
+        "redux"
+      ]
     }
   ]
 }
