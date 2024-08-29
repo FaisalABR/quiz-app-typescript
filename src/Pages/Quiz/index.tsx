@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import { useQuizContext } from "../../Hooks/useQuiz";
-import { Layout } from "../../Layouts";
-import { BoxQuiz, Recap } from "../../Components/organism";
-import { Loading } from "../../Components/atoms";
+import { useQuizContext } from "@/Hooks/useQuiz";
+import { Layout } from "@/Layouts";
+import { BoxQuiz, Recap } from "@/Components/organism";
+import { Loading } from "@/Components/atoms";
 import { Link } from "react-router-dom";
 
 export const Quiz = () => {

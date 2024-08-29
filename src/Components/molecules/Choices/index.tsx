@@ -21,12 +21,7 @@ export const Choices = () => {
   return (
     <div className="w-full flex flex-col gap-2 ">
       {answers.map((item, i) => (
-        <Button
-          key={i}
-          className="w-full px-2 py-1 rounded-md hover:animate-pulse font-medium cursor-pointer border border-blue-500 bg-blue-200 text-sm text-slate-950"
-          handleClick={() => handleAnswer(item)}
-          text={item}
-        />
+        <Button key={i} handleClick={() => handleAnswer(item)} text={item} />
       ))}
     </div>
   );

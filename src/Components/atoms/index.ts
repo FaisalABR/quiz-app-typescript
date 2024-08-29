@@ -6,5 +6,3 @@ export * from "./Greetings";
 export * from "./Question";
 export * from "./TotalTime";
 export * from "./AccountPrompt";
-export * from "./Label";
-export * from "./Input";

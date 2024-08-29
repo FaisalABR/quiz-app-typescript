@@ -1,3 +1,4 @@
+import { ButtonProps } from "antd";
 import { FirebaseError } from "firebase/app";
 import { User, UserCredential } from "firebase/auth";
 import { ChangeEvent, Dispatch, ReactNode } from "react";
@@ -15,14 +16,13 @@ export interface QuizTypes {
   incorrect_answers: string[];
 }
 
-export interface ButtonProps {
-  className: string;
+export interface IProps extends ButtonProps {
+  href?: string;
   handleClick?: () => void;
-  text: string;
 }
 
 export interface StatProps {
-  className?: string;
+  color?: string;
   label: string;
   amount: number;
 }
@@ -152,4 +152,15 @@ export type ProductTypes = {
 export type AuthLoginTypes = {
   email: string;
   password: string;
+};
+
+export type TalentTypes = {
+  id: string;
+  key?: string;
+  nama: string;
+  divisi: string;
+  posisi: string;
+  salary: number;
+  status: string;
+  skills: string[];
 };

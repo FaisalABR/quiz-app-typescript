@@ -1,8 +1,5 @@
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
+import { ProductOutlined, UserOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 export const QUESTION_QUIZ = [
   {
@@ -117,18 +114,37 @@ export const TOTAL_TIMER = 15;
 
 export const NAV_ITEMS = [
   {
-    key: "products-key",
+    key: "/products",
+    icon: <ProductOutlined />,
+    label: <Link to="/products">Products</Link>,
+  },
+  {
+    key: "/talents",
     icon: <UserOutlined />,
-    label: "nav 1",
+    label: <Link to="/talents">Talents</Link>,
   },
-  {
-    key: "2",
-    icon: <VideoCameraOutlined />,
-    label: "nav 2",
-  },
-  {
-    key: "3",
-    icon: <UploadOutlined />,
-    label: "nav 3",
-  },
+];
+
+export const SELECT_POSISI = [
+  { value: "Frontend Developer", label: "Frontend Developer" },
+  { value: "Backend Developer", label: "Backend Developer" },
+  { value: "Mobile Developer", label: "Mobile Developer" },
+  { value: "Fullstack Developer", label: "Fullstack Developer" },
+  { value: "DevOps Engineer", label: "DevOps Engineer" },
+  { value: "Data Analyst", label: "Data Analyst" },
+  { value: "UI/UX Designer", label: "UI/UX Designer" },
+  { value: "Graphic Designer", label: "Graphic Designer" },
+  { value: "Sales Manager", label: "Sales Manager" },
+  { value: "Sales Executive", label: "Sales Executive" },
+  { value: "HR Generalist", label: "HR Generalist" },
+  { value: "Content Strategist", label: "Content Strategist" },
+];
+
+export const SELECT_DIVISI = [
+  { value: "IT Development", label: "IT Development" },
+  { value: "Research", label: "Research" },
+  { value: "Design", label: "Design" },
+  { value: "Sales", label: "Sales" },
+  { value: "HR", label: "HR" },
+  { value: "Marketing", label: "Marketing" },
 ];

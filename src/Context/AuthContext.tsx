@@ -9,8 +9,8 @@ import {
   User,
   UserCredential,
 } from "firebase/auth";
-import { authFirebase } from "../firebase";
-import { AuthContextType, ChildrenTypes } from "../Types";
+import { authFirebase } from "@/firebase";
+import { AuthContextType, ChildrenTypes } from "@/Types";
 import { FirebaseError } from "firebase/app";
 
 export const AuthContext = createContext<AuthContextType | undefined>(

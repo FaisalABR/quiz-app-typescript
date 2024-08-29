@@ -1,6 +1,6 @@
 import { createContext, useEffect, useReducer } from "react";
-import { QUESTION_QUIZ, TOTAL_TIMER } from "../Constants";
-import { ChildrenTypes, QuizContextType, QuizStateTypes } from "../Types";
+import { QUESTION_QUIZ, TOTAL_TIMER } from "@/Constants";
+import { ChildrenTypes, QuizContextType, QuizStateTypes } from "@/Types";
 import { quizReducer } from "./quizReducer";
 
 const initialState: QuizStateTypes = {

@@ -1,5 +1,5 @@
 import { QueryFunctionContext } from "@tanstack/react-query";
-import { CreateProductTypes, UpdateProductTypes } from "../Types";
+import { CreateProductTypes, UpdateProductTypes } from "@/Types";
 import { client } from "./axios";
 
 export const fetchProducts = async () => {

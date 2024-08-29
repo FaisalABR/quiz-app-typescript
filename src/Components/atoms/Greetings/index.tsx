@@ -1,5 +1,6 @@
+import { Typography } from "antd";
 import { GreetingProps } from "../../../Types";
 
 export const Greetings = ({ text }: GreetingProps) => {
-  return <p>{text}</p>;
+  return <Typography.Text>{text}</Typography.Text>;
 };
