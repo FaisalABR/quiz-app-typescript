@@ -41,7 +41,6 @@ export const User = () => {
   });
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
   const { isMobile } = useMobile();
-  console.log("isMobile >>>", isMobile);
 
   const { isLoading, data, isError } = useQuery({
     queryKey: ["talents", filter],

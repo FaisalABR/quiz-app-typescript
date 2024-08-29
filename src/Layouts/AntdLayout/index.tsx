@@ -91,7 +91,6 @@ export const AntdLayout = ({ children }: { children: ReactNode }) => {
           style={{
             padding: 24,
             overflow: "auto",
-            // backgroundColor: "#FF503F",
           }}
         >
           {children}
