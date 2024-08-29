@@ -37,6 +37,10 @@ const routes = (isAuth: User | null): RouteObject[] => {
       Component: ProductPages,
     },
     {
+      path: "/products/:productId",
+      Component: ProductPages,
+    },
+    {
       path: "/talents",
       Component: TalentPages,
     },
