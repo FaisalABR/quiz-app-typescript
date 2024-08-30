@@ -1,21 +1,16 @@
+import { ENDPOINTS } from "@/Constants";
 import { FilterProps } from "@/Types";
 import { callAPI } from "@/Utils/utils";
 
-export const fetchTalents = async (filter: FilterProps) => {
-  const { divisi, posisi } = filter;
-  const endpoint = "/talents";
-
+export const fetchTalents = async (params: FilterProps) => {
   return callAPI.get({
-    endpoint,
-    params: {
-      divisi,
-      posisi,
-    },
+    endpoint: ENDPOINTS.TALENTS.DEFAULT,
+    params,
   });
 };
 
 export const deleteTalent = async (talentId: string) => {
-  const endpoint = `/talents/${talentId}`;
-
-  return callAPI.delete({ endpoint });
+  return callAPI.delete({
+    endpoint: ENDPOINTS.TALENTS.DEFAULT + `/${talentId}`,
+  });
 };

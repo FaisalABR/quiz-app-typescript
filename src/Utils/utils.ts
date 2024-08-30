@@ -7,41 +7,22 @@ export const formatCurrency = (nominal: number): string => {
   return "Rp" + currency;
 };
 
+const apiCall = async (
+  method: "get" | "post" | "delete" | "put",
+  { endpoint, ...options }: CallAPIProps
+) => {
+  try {
+    const res = await client[method](endpoint, options);
+    return res.data;
+  } catch (e) {
+    console.error(e);
+    throw e;
+  }
+};
+
 export const callAPI = {
-  get: async ({ endpoint, params }: CallAPIProps) => {
-    try {
-      const res = await client.get(endpoint, { params });
-      return res.data;
-    } catch (e) {
-      console.log(e);
-      throw e;
-    }
-  },
-  post: async ({ endpoint, data }: CallAPIProps) => {
-    try {
-      const res = await client.post(endpoint, data);
-      return res.data;
-    } catch (e) {
-      console.log(e);
-      throw e;
-    }
-  },
-  delete: async ({ endpoint }: CallAPIProps) => {
-    try {
-      const res = await client.delete(endpoint);
-      return res.data;
-    } catch (e) {
-      console.log(e);
-      throw e;
-    }
-  },
-  put: async ({ endpoint, data }: CallAPIProps) => {
-    try {
-      const res = await client.put(endpoint, data);
-      return res.data;
-    } catch (e) {
-      console.log(e);
-      throw e;
-    }
-  },
+  get: (props: CallAPIProps) => apiCall("get", props),
+  delete: (props: CallAPIProps) => apiCall("delete", props),
+  post: (props: CallAPIProps) => apiCall("post", props),
+  put: (props: CallAPIProps) => apiCall("put", props),
 };
