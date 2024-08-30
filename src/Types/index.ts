@@ -1,4 +1,5 @@
 import { ButtonProps } from "antd";
+import { AxiosRequestConfig } from "axios";
 import { FirebaseError } from "firebase/app";
 import { User, UserCredential } from "firebase/auth";
 import { ChangeEvent, Dispatch, ReactNode } from "react";
@@ -171,3 +172,7 @@ export type FilterProps = {
   query: string;
   page: number;
 };
+
+export interface CallAPIProps extends AxiosRequestConfig {
+  endpoint: string;
+}

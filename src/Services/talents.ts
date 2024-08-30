@@ -1,15 +1,12 @@
 import { FilterProps } from "@/Types";
 import { callAPI } from "@/Utils/utils";
 
-const ROOT_API = import.meta.env.VITE_LOCAL_API;
-
 export const fetchTalents = async (filter: FilterProps) => {
   const { divisi, posisi } = filter;
-  const url = `${ROOT_API}/talents`;
+  const endpoint = "/talents";
 
-  return callAPI({
-    url,
-    method: "GET",
+  return callAPI.get({
+    endpoint,
     params: {
       divisi,
       posisi,
@@ -18,7 +15,7 @@ export const fetchTalents = async (filter: FilterProps) => {
 };
 
 export const deleteTalent = async (talentId: string) => {
-  const url = `${ROOT_API}/talents/${talentId}`;
+  const endpoint = `/talents/${talentId}`;
 
-  return callAPI({ url, method: "DELETE" });
+  return callAPI.delete({ endpoint });
 };
