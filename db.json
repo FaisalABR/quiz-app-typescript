@@ -522,30 +522,6 @@
         "kotlin",
         "swift"
       ]
-    },
-    {
-      "id": "talent-39",
-      "nama": "Dewi Indah",
-      "divisi": "Marketing",
-      "posisi": "Content Strategist",
-      "salary": 19000000,
-      "status": "Active",
-      "skills": [
-        "content marketing",
-        "seo"
-      ]
-    },
-    {
-      "id": "talent-40",
-      "nama": "Rizal Mahendra",
-      "divisi": "IT Development",
-      "posisi": "Frontend Developer",
-      "salary": 21000000,
-      "status": "Idle",
-      "skills": [
-        "react",
-        "redux"
-      ]
     }
   ]
 }

@@ -164,3 +164,10 @@ export type TalentTypes = {
   status: string;
   skills: string[];
 };
+
+export type FilterProps = {
+  divisi: string;
+  posisi: string;
+  query: string;
+  page: number;
+};

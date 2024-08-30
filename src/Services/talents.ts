@@ -1,45 +1,24 @@
-import axios from "axios";
+import { FilterProps } from "@/Types";
+import { callAPI } from "@/Utils/utils";
 
-export type FilterProps = {
-  divisi: string;
-  posisi: string;
-  query: string;
-  page: number;
-};
+const ROOT_API = import.meta.env.VITE_LOCAL_API;
 
 export const fetchTalents = async (filter: FilterProps) => {
   const { divisi, posisi } = filter;
-  try {
-    const res = await axios.get(
-      `http://localhost:3000/talents?divisi=${divisi}&posisi=${posisi}`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+  const url = `${ROOT_API}/talents`;
 
-    return res.data;
-  } catch (e) {
-    console.error(e);
-    throw e;
-  }
+  return callAPI({
+    url,
+    method: "GET",
+    params: {
+      divisi,
+      posisi,
+    },
+  });
 };
 
 export const deleteTalent = async (talentId: string) => {
-  try {
-    const res = await axios.delete(
-      `http://localhost:3000/talents/${talentId}`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+  const url = `${ROOT_API}/talents/${talentId}`;
 
-    return res.data;
-  } catch (e) {
-    console.error(e);
-    throw e;
-  }
+  return callAPI({ url, method: "DELETE" });
 };
