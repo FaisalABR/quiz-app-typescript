@@ -148,3 +148,9 @@ export const SELECT_DIVISI = [
   { value: "HR", label: "HR" },
   { value: "Marketing", label: "Marketing" },
 ];
+
+export const ENDPOINTS = {
+  TALENTS: {
+    DEFAULT: "/talents",
+  },
+};
