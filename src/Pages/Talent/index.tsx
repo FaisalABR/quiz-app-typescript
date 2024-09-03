@@ -202,6 +202,7 @@ export const Talent = () => {
         </Title>
         <Button
           type="primary"
+          href="/talents/create"
           icon={<PlusSquareOutlined />}
           style={{ backgroundColor: "#00ACC1", fontSize: 16 }}
         >
@@ -247,7 +248,7 @@ export const Talent = () => {
         pagination={{
           showSizeChanger: true,
           defaultPageSize: 5,
-          onChange: (page, pageSize) => setFilter({ ...filter, page: page }),
+          onChange: (page) => setFilter({ ...filter, page: page }),
         }}
       />
       <Drawer
@@ -290,6 +291,7 @@ export const Talent = () => {
         }}
         footer={[
           <Button
+            key="cancel"
             handleClick={() => {
               setOpenDelete(false);
               setSelectedId("");
@@ -298,6 +300,7 @@ export const Talent = () => {
             Cancel
           </Button>,
           <Button
+            key="submit"
             type="primary"
             danger
             handleClick={() => deleteMutation.mutate(selectedId)}

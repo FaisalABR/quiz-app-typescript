@@ -522,6 +522,32 @@
         "kotlin",
         "swift"
       ]
+    },
+    {
+      "id": "4ae16bc5-9871-45e4-9d1d-6da3ec32766f",
+      "nama": "Faisal Riza",
+      "firstName": "Faisal",
+      "lastName": "Riza",
+      "tanggalLahir": "2024-09-02T17:00:00.000Z",
+      "domisili": "Yogyakarta",
+      "phone": "082216386576",
+      "email": "faisalabubakar.works@gmail.com",
+      "divisi": "IT Development",
+      "posisi": "Frontend Developer",
+      "kontrak": 2,
+      "salary": 10000000,
+      "skills": [
+        "laravel",
+        "react"
+      ],
+      "bahasa": [
+        "indonesia"
+      ],
+      "github": "https://github",
+      "linkedin": "https://linkedin",
+      "websitePortfolio": "https://portfolio",
+      "status": "idle",
+      "cv": "https://firebasestorage.googleapis.com/v0/b/react-auth-tutorial-f29d2.appspot.com/o/uploads%2FUpdated%20CV.pdf?alt=media&token=9011bdc6-712e-42b7-a127-bfd5d2a07c49"
     }
   ]
 }

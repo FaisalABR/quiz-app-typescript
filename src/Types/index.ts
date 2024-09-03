@@ -158,12 +158,30 @@ export type AuthLoginTypes = {
 export type TalentTypes = {
   id: string;
   key?: string;
+  firstName: string;
+  lastName: string;
   nama: string;
+  tanggalLahir: string;
+  domisili: string;
+  phone: string;
+  email: string;
   divisi: string;
   posisi: string;
+  kontrak: number;
   salary: number;
-  status: string;
   skills: string[];
+  bahasa: string[];
+  github: string;
+  linkedin: string;
+  websitePortfolio: string;
+  status: "idle" | "on going";
+  isAvailableWFO: boolean;
+  cv: {
+    file: {
+      uid: string;
+    };
+    fileList: FileUploadTypes[];
+  };
 };
 
 export type FilterProps = {
@@ -175,4 +193,43 @@ export type FilterProps = {
 
 export interface CallAPIProps extends AxiosRequestConfig {
   endpoint: string;
+}
+
+export type FileUploadTypes = {
+  uid: string;
+  lastModified: number;
+  lastModifiedDate: string;
+  name: string;
+  size: number;
+  type: string;
+  percent: number;
+  originFileObj: {
+    uid: string;
+  };
+};
+
+export interface CreateTalentTypes {
+  firstName: string;
+  lastName: string;
+  tanggalLahir: string;
+  domisili: string;
+  phone: string;
+  email: string;
+  divisi: string;
+  posisi: string;
+  kontrak: number;
+  salary: number;
+  skills: string[];
+  bahasa: string[];
+  github: string;
+  linkedin: string;
+  websitePortfolio: string;
+  status: "idle" | "on going";
+  isAvailableWFO: boolean;
+  cv: string;
+}
+
+export interface RequestTalentTypes extends CreateTalentTypes {
+  id: string;
+  nama: string;
 }
