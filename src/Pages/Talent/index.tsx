@@ -113,10 +113,10 @@ export const Talent = () => {
       key: "posisi",
     },
     {
-      title: "Salary",
-      dataIndex: "salary",
-      key: "salary",
-      render: (__, { salary }) => formatCurrency(salary),
+      title: "Gaji",
+      dataIndex: "gaji",
+      key: "gaji",
+      render: (__, { gaji }) => formatCurrency(gaji),
     },
     {
       title: "Status",
@@ -124,22 +124,22 @@ export const Talent = () => {
       key: "status",
     },
     {
-      title: "Skills",
-      dataIndex: "skill",
-      key: "skill",
-      render: (__, { skills }) => (
+      title: "Keahlian",
+      dataIndex: "keahlian",
+      key: "keahlian",
+      render: (__, { keahlian }) => (
         <>
-          {skills.map((skill: string) => {
+          {keahlian.map((item: string) => {
             let color = "";
-            if (skill === "react") {
+            if (item === "react") {
               color = "blue";
             } else {
               color = "volcano";
             }
 
             return (
-              <Tag color={color} key={skill}>
-                {skill}
+              <Tag color={color} key={item}>
+                {item}
               </Tag>
             );
           })}

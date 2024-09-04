@@ -23,7 +23,7 @@ import {
   UploadFile,
   UploadProps,
 } from "antd";
-import { CreateTalentTypes } from "@/Types";
+import { TalentTypes } from "@/Types";
 import { Button } from "@/Components/atoms";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createTalent } from "@/Services/talents";
@@ -61,12 +61,10 @@ export const CreateTalent = () => {
     },
   });
 
-  const onFinish: FormProps<CreateTalentTypes>["onFinish"] = (values) => {
-    mutation.mutate({
-      id: uuidv4(),
-      nama: `${values.namaPertama} ${values.namaTerakhir}`,
-      ...values,
-    });
+  const onFinish: FormProps<TalentTypes>["onFinish"] = (values) => {
+    values["id"] = uuidv4();
+    values["nama"] = `${values.namaPertama} ${values.namaTerakhir}`;
+    mutation.mutate(values);
 
     form.resetFields();
   };

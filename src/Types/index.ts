@@ -155,35 +155,6 @@ export type AuthLoginTypes = {
   password: string;
 };
 
-export type TalentTypes = {
-  id: string;
-  key?: string;
-  firstName: string;
-  lastName: string;
-  nama: string;
-  tanggalLahir: string;
-  domisili: string;
-  phone: string;
-  email: string;
-  divisi: string;
-  posisi: string;
-  kontrak: number;
-  salary: number;
-  skills: string[];
-  bahasa: string[];
-  github: string;
-  linkedin: string;
-  websitePortfolio: string;
-  status: "idle" | "on going";
-  isAvailableWFO: boolean;
-  cv: {
-    file: {
-      uid: string;
-    };
-    fileList: FileUploadTypes[];
-  };
-};
-
 export type FilterProps = {
   divisi: string;
   posisi: string;
@@ -208,7 +179,10 @@ export type FileUploadTypes = {
   };
 };
 
-export interface CreateTalentTypes {
+export interface TalentTypes {
+  id: string;
+  nama: string;
+  key?: string;
   namaPertama: string;
   namaTerakhir: string;
   tanggalLahir: string;
@@ -228,11 +202,6 @@ export interface CreateTalentTypes {
   bersediaWFO: boolean;
   cv: string;
   tentangDiri: string;
-}
-
-export interface RequestTalentTypes extends CreateTalentTypes {
-  id: string;
-  nama: string;
 }
 
 export type TextFormatType =
