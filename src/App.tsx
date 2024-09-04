@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { Suspense } from "react";
 import routes from "@/Routes";
-import { Spin } from "antd";
+import { Loading } from "./Components/atoms";
 
 function AppRoutes() {
   const { isAuth } = useAuthContext();
@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <Router>
-        <Suspense fallback={<Spin />}>
+        <Suspense fallback={<Loading />}>
           <AppRoutes />
         </Suspense>
       </Router>
