@@ -209,23 +209,23 @@ export type FileUploadTypes = {
 };
 
 export interface CreateTalentTypes {
-  firstName: string;
-  lastName: string;
+  namaPertama: string;
+  namaTerakhir: string;
   tanggalLahir: string;
   domisili: string;
-  phone: string;
+  nomorTelepon: string;
   email: string;
   divisi: string;
   posisi: string;
   kontrak: number;
-  salary: number;
-  skills: string[];
+  gaji: number;
+  keahlian: string[];
   bahasa: string[];
   github: string;
   linkedin: string;
   websitePortfolio: string;
   status: "idle" | "on going";
-  isAvailableWFO: boolean;
+  bersediaWFO: boolean;
   cv: string;
   tentangDiri: string;
 }

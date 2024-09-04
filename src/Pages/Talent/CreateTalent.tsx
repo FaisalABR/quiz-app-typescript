@@ -27,7 +27,7 @@ import { CreateTalentTypes } from "@/Types";
 import { Button } from "@/Components/atoms";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createTalent } from "@/Services/talents";
-import { SELECT_DIVISI, SELECT_POSISI_CHAINING } from "@/Constants";
+import { ENDPOINTS, SELECT_DIVISI, SELECT_POSISI_CHAINING } from "@/Constants";
 import { useState } from "react";
 import { UploadOutlined } from "@ant-design/icons";
 import { useMobile } from "@/Hooks/useMobile";
@@ -37,6 +37,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 import { RcFile } from "antd/es/upload";
 import { Editor } from "@/Components/organism";
+import { themeColors } from "@/Utils/theme";
 
 const { Option } = Select;
 
@@ -56,17 +57,16 @@ export const CreateTalent = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["talents"] });
       message.success("Berhasil menambahkan talents");
-      navigate("/talents");
+      navigate(ENDPOINTS.TALENTS.DEFAULT);
     },
   });
 
   const onFinish: FormProps<CreateTalentTypes>["onFinish"] = (values) => {
     mutation.mutate({
       id: uuidv4(),
-      nama: `${values.firstName} ${values.lastName}`,
+      nama: `${values.namaPertama} ${values.namaTerakhir}`,
       ...values,
     });
-    console.log(values);
 
     form.resetFields();
   };
@@ -87,7 +87,7 @@ export const CreateTalent = () => {
           return updatedRefs;
         });
       } catch (e) {
-        message.error("Error deleting file", e);
+        message.error(`Error deleting file: ${(e as Error).message}`);
       }
     },
     beforeUpload: (file) => {
@@ -136,20 +136,20 @@ export const CreateTalent = () => {
           <Flex vertical gap="large">
             <Flex gap="middle" vertical={isMobile ? true : false}>
               <Form.Item
-                name="firstName"
-                label="First Name"
+                name="namaPertama"
+                label="Nama Pertama"
                 rules={[rule]}
                 layout="vertical"
-                style={{ width: "50%" }}
+                style={{ width: isMobile ? "100%" : "50%" }}
               >
                 <Input placeholder="John" />
               </Form.Item>
               <Form.Item
-                name="lastName"
-                label="Last Name"
+                name="namaTerakhir"
+                label="Nama Terakhir"
                 rules={[rule]}
                 layout="vertical"
-                style={{ width: "50%" }}
+                style={{ width: isMobile ? "100%" : "50%" }}
               >
                 <Input placeholder="Doe" />
               </Form.Item>
@@ -175,8 +175,8 @@ export const CreateTalent = () => {
               </Form.Item>
             </Flex>
             <Form.Item
-              name="phone"
-              label="Phone Number"
+              name="nomorTelepon"
+              label="Nomor Telepon"
               rules={[rule]}
               layout="vertical"
             >
@@ -265,25 +265,26 @@ export const CreateTalent = () => {
               />
             </Form.Item>
             <Form.Item
-              name="salary"
-              label="Salary"
+              name="gaji"
+              label="Gaji"
               rules={[rule]}
               layout="vertical"
             >
               <InputNumber<number>
-                // initialValue={1000000}
                 style={{ width: "100%" }}
                 formatter={(value) =>
                   `Rp ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                 }
-                parser={(value) =>
-                  value?.replace(/Rp\s?|(,*)/g, "") as unknown as number
-                }
+                parser={(value: string | undefined): number => {
+                  return value
+                    ? parseFloat(value.replace(/Rp\s?|(,*)/g, ""))
+                    : 0;
+                }}
               />
             </Form.Item>
             <Form.Item
-              name="skills"
-              label="Skills"
+              name="keahlian"
+              label="Keahlian"
               rules={[rule]}
               layout="vertical"
             >
@@ -366,6 +367,7 @@ export const CreateTalent = () => {
               label="Bersedia WFO"
               rules={[rule]}
               layout="vertical"
+              initialValue={true}
             >
               <Switch
                 checkedChildren="Bersedia"
@@ -379,7 +381,11 @@ export const CreateTalent = () => {
               </Upload>
             </Form.Item>
             <Form.Item style={{ marginTop: "2rem" }}>
-              <Button type="primary" htmlType="submit">
+              <Button
+                style={{ backgroundColor: themeColors.primary, width: "100%" }}
+                type="primary"
+                htmlType="submit"
+              >
                 Submit
               </Button>
             </Form.Item>

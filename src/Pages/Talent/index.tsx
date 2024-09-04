@@ -24,7 +24,7 @@ import type { GetProps } from "antd";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { deleteTalent, fetchTalents } from "@/Services/talents";
 import { useEffect, useState } from "react";
-import { SELECT_DIVISI, SELECT_POSISI } from "@/Constants";
+import { ENDPOINTS, SELECT_DIVISI, SELECT_POSISI } from "@/Constants";
 import { useNavigate } from "react-router-dom";
 import { useMobile } from "@/Hooks/useMobile";
 import { TalentTypes } from "@/Types";
@@ -202,7 +202,7 @@ export const Talent = () => {
         </Title>
         <Button
           type="primary"
-          href="/talents/create"
+          href={ENDPOINTS.TALENTS.CREATE}
           icon={<PlusSquareOutlined />}
           style={{ backgroundColor: "#00ACC1", fontSize: 16 }}
         >

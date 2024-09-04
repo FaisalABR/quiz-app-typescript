@@ -27,7 +27,7 @@ import {
   UndoOutlined,
 } from "@ant-design/icons";
 import { INITIAL_CONFIG } from "@/Constants";
-import { FormInstance } from "antd";
+import { Flex, FormInstance } from "antd";
 import EditorSelect from "@/Components/atoms/Button/AlignButton";
 
 function MyCustomAutoFocusPlugin() {
@@ -62,7 +62,7 @@ export const Editor = ({ form }: { form: FormInstance }) => {
 
   return (
     <LexicalComposer initialConfig={INITIAL_CONFIG}>
-      <div style={{ display: "flex", gap: "10px", margin: "10px 0" }}>
+      <Flex wrap gap="small" style={{ margin: "10px 0" }}>
         <EditorButton
           command={FORMAT_TEXT_COMMAND}
           commandArgs="bold"
@@ -92,7 +92,7 @@ export const Editor = ({ form }: { form: FormInstance }) => {
           icon={<CodeOutlined />}
         />
         <EditorSelect command={FORMAT_ELEMENT_COMMAND} />
-      </div>
+      </Flex>
       <RichTextPlugin
         contentEditable={<ContentEditable className="editor-content" />}
         placeholder={

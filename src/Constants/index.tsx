@@ -180,12 +180,11 @@ export const SELECT_POSISI_CHAINING = {
 export const ENDPOINTS = {
   TALENTS: {
     DEFAULT: "/talents",
+    CREATE: "/talents/create",
   },
 };
 
 const theme = {
-  // Theme styling goes here
-  // ...
   text: {
     bold: "editor-bold",
     italic: "editor-italic",
