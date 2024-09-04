@@ -164,6 +164,7 @@ export const Talent = () => {
             Delete
           </Button>
           <Button
+            href={ENDPOINTS.TALENTS.EDIT + `/${record.id}`}
             style={{ backgroundColor: "#faad14", borderColor: "#faad14" }}
             icon={<EditOutlined />}
           >
