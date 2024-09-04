@@ -24,7 +24,7 @@ import type { GetProps } from "antd";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { deleteTalent, fetchTalents } from "@/Services/talents";
 import { useEffect, useState } from "react";
-import { SELECT_DIVISI, SELECT_POSISI } from "@/Constants";
+import { ENDPOINTS, SELECT_DIVISI, SELECT_POSISI } from "@/Constants";
 import { useNavigate } from "react-router-dom";
 import { useMobile } from "@/Hooks/useMobile";
 import { TalentTypes } from "@/Types";
@@ -113,10 +113,10 @@ export const Talent = () => {
       key: "posisi",
     },
     {
-      title: "Salary",
-      dataIndex: "salary",
-      key: "salary",
-      render: (__, { salary }) => formatCurrency(salary),
+      title: "Gaji",
+      dataIndex: "gaji",
+      key: "gaji",
+      render: (__, { gaji }) => formatCurrency(gaji),
     },
     {
       title: "Status",
@@ -124,22 +124,22 @@ export const Talent = () => {
       key: "status",
     },
     {
-      title: "Skills",
-      dataIndex: "skill",
-      key: "skill",
-      render: (__, { skills }) => (
+      title: "Keahlian",
+      dataIndex: "keahlian",
+      key: "keahlian",
+      render: (__, { keahlian }) => (
         <>
-          {skills.map((skill: string) => {
+          {keahlian.map((item: string) => {
             let color = "";
-            if (skill === "react") {
+            if (item === "react") {
               color = "blue";
             } else {
               color = "volcano";
             }
 
             return (
-              <Tag color={color} key={skill}>
-                {skill}
+              <Tag color={color} key={item}>
+                {item}
               </Tag>
             );
           })}
@@ -202,6 +202,7 @@ export const Talent = () => {
         </Title>
         <Button
           type="primary"
+          href={ENDPOINTS.TALENTS.CREATE}
           icon={<PlusSquareOutlined />}
           style={{ backgroundColor: "#00ACC1", fontSize: 16 }}
         >
@@ -247,7 +248,7 @@ export const Talent = () => {
         pagination={{
           showSizeChanger: true,
           defaultPageSize: 5,
-          onChange: (page, pageSize) => setFilter({ ...filter, page: page }),
+          onChange: (page) => setFilter({ ...filter, page: page }),
         }}
       />
       <Drawer
@@ -290,6 +291,7 @@ export const Talent = () => {
         }}
         footer={[
           <Button
+            key="cancel"
             handleClick={() => {
               setOpenDelete(false);
               setSelectedId("");
@@ -298,6 +300,7 @@ export const Talent = () => {
             Cancel
           </Button>,
           <Button
+            key="submit"
             type="primary"
             danger
             handleClick={() => deleteMutation.mutate(selectedId)}

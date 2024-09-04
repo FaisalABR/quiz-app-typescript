@@ -1,4 +1,5 @@
 import { ProductOutlined, UserOutlined } from "@ant-design/icons";
+import { CodeHighlightNode, CodeNode } from "@lexical/code";
 import { Link } from "react-router-dom";
 
 export const QUESTION_QUIZ = [
@@ -132,12 +133,18 @@ export const SELECT_POSISI = [
   { value: "Fullstack Developer", label: "Fullstack Developer" },
   { value: "DevOps Engineer", label: "DevOps Engineer" },
   { value: "Data Analyst", label: "Data Analyst" },
+  { value: "Data Scientist", label: "Data Scientist" },
   { value: "UI/UX Designer", label: "UI/UX Designer" },
   { value: "Graphic Designer", label: "Graphic Designer" },
   { value: "Sales Manager", label: "Sales Manager" },
+  { value: "Account Manager", label: "Account Manager" },
   { value: "Sales Executive", label: "Sales Executive" },
   { value: "HR Generalist", label: "HR Generalist" },
-  { value: "Content Strategist", label: "Content Strategist" },
+  { value: "HR Manager", label: "HR Manager" },
+  { value: "Recruitment Specialist", label: "Recruitment Specialist" },
+  { value: "SEO Specialist", label: "SEO Specialist" },
+  { value: "Content Creator", label: "Content Creator" },
+  { value: "Digital Marketer", label: "Digital Marketer" },
 ];
 
 export const SELECT_DIVISI = [
@@ -149,8 +156,49 @@ export const SELECT_DIVISI = [
   { value: "Marketing", label: "Marketing" },
 ];
 
+export const SELECT_POSISI_CHAINING = {
+  "IT Development": [
+    { value: "Frontend Developer", label: "Frontend Developer" },
+    { value: "Backend Developer", label: "Backend Developer" },
+    { value: "Mobile Developer", label: "Mobile Developer" },
+    { value: "Fullstack Developer", label: "Fullstack Developer" },
+    { value: "DevOps Engineer", label: "DevOps Engineer" },
+  ],
+  Research: [{ value: "Data Analyst", label: "Data Analyst" }],
+  Design: [
+    { value: "UI/UX Designer", label: "UI/UX Designer" },
+    { value: "Graphic Designer", label: "Graphic Designer" },
+  ],
+  Sales: [
+    { value: "Sales Manager", label: "Sales Manager" },
+    { value: "Sales Executive", label: "Sales Executive" },
+  ],
+  HR: [{ value: "HR Generalist", label: "HR Generalist" }],
+  Marketing: [{ value: "Content Strategist", label: "Content Strategist" }],
+};
+
 export const ENDPOINTS = {
   TALENTS: {
     DEFAULT: "/talents",
+    CREATE: "/talents/create",
+  },
+};
+
+const theme = {
+  text: {
+    bold: "editor-bold",
+    italic: "editor-italic",
+    underline: "editor-underline",
+    strikethrough: "editor-textStrikethrough",
+  },
+  code: "editor-code",
+};
+
+export const INITIAL_CONFIG = {
+  namespace: "MyEditor",
+  theme,
+  nodes: [CodeNode, CodeHighlightNode],
+  onError: (error: Error) => {
+    console.error(error);
   },
 };

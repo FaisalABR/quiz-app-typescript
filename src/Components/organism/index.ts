@@ -7,3 +7,4 @@ export * from "./SignUpForm";
 export * from "./ProductForm";
 export * from "./ProductTable";
 export * from "./ModalUpdate";
+export * from "./Editor";

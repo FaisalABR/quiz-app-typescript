@@ -22,3 +22,75 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.ltr {
+  text-align: left;
+}
+
+.rtl {
+  text-align: right;
+}
+
+.editor-placeholder {
+  color: #999;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  top: 10;
+}
+
+.editor-paragraph {
+  margin: 0 0 15px 0;
+  position: relative;
+}
+
+.editor-content {
+  border: 1px solid white;
+  padding: 16px;
+  min-height: 250px;
+  outline: none;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.editor-content .editor-text {
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+}
+
+.editor-content .editor-heading {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.editor-content .editor-bold {
+  font-weight: bold;
+}
+
+.editor-content .editor-italic {
+  font-style: italic;
+}
+
+.editor-content .editor-underline {
+  text-decoration: underline;
+}
+
+.editor-code {
+  background-color: #999;
+  display: inline;
+}
+
+.editor-textStrikethrough {
+  text-decoration: line-through;
+}
+
+.editor-input pre {
+  background-color: #9999;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.editor-input code {
+  color: #d6336c;
+}

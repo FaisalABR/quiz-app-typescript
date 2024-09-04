@@ -13,3 +13,12 @@ export const siderThemeConfig: ThemeConfig = {
     },
   },
 };
+
+export const themeColors = {
+  primary: "#4DD0E1",
+  secondary: "",
+  success: "",
+  warning: "",
+  error: "",
+  info: "",
+};

@@ -155,17 +155,6 @@ export type AuthLoginTypes = {
   password: string;
 };
 
-export type TalentTypes = {
-  id: string;
-  key?: string;
-  nama: string;
-  divisi: string;
-  posisi: string;
-  salary: number;
-  status: string;
-  skills: string[];
-};
-
 export type FilterProps = {
   divisi: string;
   posisi: string;
@@ -176,3 +165,51 @@ export type FilterProps = {
 export interface CallAPIProps extends AxiosRequestConfig {
   endpoint: string;
 }
+
+export type FileUploadTypes = {
+  uid: string;
+  lastModified: number;
+  lastModifiedDate: string;
+  name: string;
+  size: number;
+  type: string;
+  percent: number;
+  originFileObj: {
+    uid: string;
+  };
+};
+
+export interface TalentTypes {
+  id: string;
+  nama: string;
+  key?: string;
+  namaPertama: string;
+  namaTerakhir: string;
+  tanggalLahir: string;
+  domisili: string;
+  nomorTelepon: string;
+  email: string;
+  divisi: string;
+  posisi: string;
+  kontrak: number;
+  gaji: number;
+  keahlian: string[];
+  bahasa: string[];
+  github: string;
+  linkedin: string;
+  websitePortfolio: string;
+  status: "idle" | "on going";
+  bersediaWFO: boolean;
+  cv: string;
+  tentangDiri: string;
+}
+
+export type TextFormatType =
+  | "bold"
+  | "italic"
+  | "underline"
+  | "codeblock"
+  | "strikethrough";
+
+// Tipe untuk alignment
+export type AlignmentType = "left" | "center" | "right";

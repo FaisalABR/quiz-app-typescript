@@ -14,6 +14,11 @@ const ProductPages = lazy(() =>
 const TalentPages = lazy(() =>
   import("@/Pages/Talent").then(({ Talent }) => ({ default: Talent }))
 );
+const CreateTalentPages = lazy(() =>
+  import("@/Pages/Talent/CreateTalent").then(({ CreateTalent }) => ({
+    default: CreateTalent,
+  }))
+);
 const QuizPages = lazy(() =>
   import("@/Pages/Quiz").then(({ Quiz }) => ({ default: Quiz }))
 );
@@ -43,6 +48,10 @@ const routes = (isAuth: User | null): RouteObject[] => {
     {
       path: "/talents",
       Component: TalentPages,
+    },
+    {
+      path: "/talents/create",
+      Component: CreateTalentPages,
     },
   ];
 };
