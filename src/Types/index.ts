@@ -227,9 +227,20 @@ export interface CreateTalentTypes {
   status: "idle" | "on going";
   isAvailableWFO: boolean;
   cv: string;
+  tentangDiri: string;
 }
 
 export interface RequestTalentTypes extends CreateTalentTypes {
   id: string;
   nama: string;
 }
+
+export type TextFormatType =
+  | "bold"
+  | "italic"
+  | "underline"
+  | "codeblock"
+  | "strikethrough";
+
+// Tipe untuk alignment
+export type AlignmentType = "left" | "center" | "right";

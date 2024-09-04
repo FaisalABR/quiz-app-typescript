@@ -1,4 +1,5 @@
 import { ProductOutlined, UserOutlined } from "@ant-design/icons";
+import { CodeHighlightNode, CodeNode } from "@lexical/code";
 import { Link } from "react-router-dom";
 
 export const QUESTION_QUIZ = [
@@ -179,5 +180,26 @@ export const SELECT_POSISI_CHAINING = {
 export const ENDPOINTS = {
   TALENTS: {
     DEFAULT: "/talents",
+  },
+};
+
+const theme = {
+  // Theme styling goes here
+  // ...
+  text: {
+    bold: "editor-bold",
+    italic: "editor-italic",
+    underline: "editor-underline",
+    strikethrough: "editor-textStrikethrough",
+  },
+  code: "editor-code",
+};
+
+export const INITIAL_CONFIG = {
+  namespace: "MyEditor",
+  theme,
+  nodes: [CodeNode, CodeHighlightNode],
+  onError: (error: Error) => {
+    console.error(error);
   },
 };

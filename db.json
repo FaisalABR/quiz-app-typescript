@@ -548,6 +548,33 @@
       "websitePortfolio": "https://portfolio",
       "status": "idle",
       "cv": "https://firebasestorage.googleapis.com/v0/b/react-auth-tutorial-f29d2.appspot.com/o/uploads%2FUpdated%20CV.pdf?alt=media&token=9011bdc6-712e-42b7-a127-bfd5d2a07c49"
+    },
+    {
+      "id": "be9f6657-2c32-4016-b186-7aa5fcc0a12e",
+      "nama": "Faisal Riza",
+      "firstName": "Faisal",
+      "lastName": "Riza",
+      "tanggalLahir": "2024-09-03T17:00:00.000Z",
+      "domisili": "Bekasi",
+      "phone": "082216386576",
+      "email": "faisalabubakar92@gmail.com",
+      "tentangDiri": "{\"__type\":\"root\",\"__parent\":null,\"__prev\":null,\"__next\":null,\"__key\":\"root\",\"__first\":\"2\",\"__last\":\"2\",\"__size\":1,\"__format\":0,\"__style\":\"\",\"__indent\":0,\"__dir\":\"ltr\",\"__cachedText\":\"sadsadadsadad\"}",
+      "divisi": "IT Development",
+      "posisi": "Frontend Developer",
+      "kontrak": 2,
+      "salary": 1000000,
+      "skills": [
+        "laravel"
+      ],
+      "bahasa": [
+        "indonesia"
+      ],
+      "github": "dsada",
+      "linkedin": "dsada",
+      "websitePortfolio": "dsada",
+      "status": "idle",
+      "isAvailableWFO": true,
+      "cv": "https://firebasestorage.googleapis.com/v0/b/react-auth-tutorial-f29d2.appspot.com/o/uploads%2F1%20(8).png?alt=media&token=1cd271f3-1eca-4fa9-b2c1-71397db6aec1"
     }
   ]
 }

@@ -36,6 +36,8 @@ import { CreateTalentValidation } from "@/Validation";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 import { RcFile } from "antd/es/upload";
+import { Editor } from "@/Components/organism";
+
 const { Option } = Select;
 
 const rule = createSchemaFieldRule(CreateTalentValidation);
@@ -64,6 +66,7 @@ export const CreateTalent = () => {
       nama: `${values.firstName} ${values.lastName}`,
       ...values,
     });
+    console.log(values);
 
     form.resetFields();
   };
@@ -84,7 +87,7 @@ export const CreateTalent = () => {
           return updatedRefs;
         });
       } catch (e) {
-        message.error("Error deleting file");
+        message.error("Error deleting file", e);
       }
     },
     beforeUpload: (file) => {
@@ -137,7 +140,7 @@ export const CreateTalent = () => {
                 label="First Name"
                 rules={[rule]}
                 layout="vertical"
-                // style={{width}}
+                style={{ width: "50%" }}
               >
                 <Input placeholder="John" />
               </Form.Item>
@@ -146,7 +149,7 @@ export const CreateTalent = () => {
                 label="Last Name"
                 rules={[rule]}
                 layout="vertical"
-                // style={{width}}
+                style={{ width: "50%" }}
               >
                 <Input placeholder="Doe" />
               </Form.Item>
@@ -198,7 +201,18 @@ export const CreateTalent = () => {
             >
               <Input placeholder="johndoe.work@gmail.com" />
             </Form.Item>
-            <Divider>Profesional Information</Divider>
+            <Form.Item
+              name="tentangDiri"
+              label="Tentang Diri Anda (summary)"
+              rules={[rule]}
+              layout="vertical"
+            >
+              <Editor form={form} />
+            </Form.Item>
+
+            <Divider style={{ marginTop: "300px" }}>
+              Profesional Information
+            </Divider>
             <Form.Item
               name="divisi"
               label="Divisi"
@@ -257,7 +271,7 @@ export const CreateTalent = () => {
               layout="vertical"
             >
               <InputNumber<number>
-                defaultValue={1000000}
+                // initialValue={1000000}
                 style={{ width: "100%" }}
                 formatter={(value) =>
                   `Rp ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")

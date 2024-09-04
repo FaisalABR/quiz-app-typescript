@@ -99,4 +99,7 @@ export const CreateTalentValidation = z.object({
   cv: z.string({
     required_error: "Field cv wajib diisi!",
   }),
+  tentangDiri: z.string({
+    required_error: "Field Tentang Diri wajib diisi!",
+  }),
 });
