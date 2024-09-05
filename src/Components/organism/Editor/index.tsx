@@ -1,13 +1,11 @@
 import {
   $getRoot,
-  CLEAR_EDITOR_COMMAND,
   EditorState,
   FORMAT_ELEMENT_COMMAND,
   FORMAT_TEXT_COMMAND,
   REDO_COMMAND,
   UNDO_COMMAND,
 } from "lexical";
-import { useEffect } from "react";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
@@ -29,23 +27,19 @@ import {
 import { INITIAL_CONFIG } from "@/Constants";
 import { Flex, FormInstance } from "antd";
 import EditorSelect from "@/Components/atoms/Button/AlignButton";
-
-function MyCustomAutoFocusPlugin() {
-  const [editor] = useLexicalComposerContext();
-
-  useEffect(() => {
-    // Focus the editor when the effect fires!
-    editor.focus();
-  }, [editor]);
-
-  return null;
-}
+import {
+  MyCustomAutoFocusPlugin,
+  RenderContentFromDBPlugin,
+} from "@/Utils/plugin";
 
 const ClearButton = () => {
   const [editor] = useLexicalComposerContext();
 
   const handleClick = () => {
-    editor.dispatchCommand(CLEAR_EDITOR_COMMAND, undefined);
+    editor.update(() => {
+      const root = $getRoot();
+      root.clear();
+    });
   };
 
   return <Button handleClick={handleClick} icon={<ClearOutlined />} />;
@@ -54,8 +48,7 @@ const ClearButton = () => {
 export const Editor = ({ form }: { form: FormInstance }) => {
   const onChange = (editorState: EditorState) => {
     editorState.read(() => {
-      const content = JSON.stringify($getRoot());
-
+      const content = JSON.stringify(editorState);
       form.setFieldsValue({ tentangDiri: content });
     });
   };
@@ -87,7 +80,7 @@ export const Editor = ({ form }: { form: FormInstance }) => {
         <EditorButton command={UNDO_COMMAND} icon={<UndoOutlined />} />
         <EditorButton command={REDO_COMMAND} icon={<RedoOutlined />} />
         <EditorButton
-          command={FORMAT_ELEMENT_COMMAND}
+          command={FORMAT_TEXT_COMMAND}
           commandArgs="code"
           icon={<CodeOutlined />}
         />
@@ -103,6 +96,7 @@ export const Editor = ({ form }: { form: FormInstance }) => {
       <OnChangePlugin onChange={onChange} />
       <HistoryPlugin />
       <MyCustomAutoFocusPlugin />
+      <RenderContentFromDBPlugin form={form} />
     </LexicalComposer>
   );
 };

@@ -72,9 +72,9 @@
       "nama": "Faisal Abu Bakar Riza",
       "divisi": "IT Development",
       "posisi": "Frontend Developer",
-      "salary": 20000000,
+      "gaji": 20000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "react",
         "laravel"
       ]
@@ -84,9 +84,9 @@
       "nama": "Dinda Almira",
       "divisi": "Research",
       "posisi": "Data Analyst",
-      "salary": 20000000,
+      "gaji": 20000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "react",
         "laravel"
       ]
@@ -96,9 +96,9 @@
       "nama": "Jack Qualyn",
       "divisi": "IT Development",
       "posisi": "Backend Developer",
-      "salary": 20000000,
+      "gaji": 20000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "react",
         "laravel"
       ]
@@ -108,9 +108,9 @@
       "nama": "Sarah Mahendra",
       "divisi": "IT Development",
       "posisi": "Fullstack Developer",
-      "salary": 22000000,
+      "gaji": 22000000,
       "status": "Active",
-      "skills": [
+      "keahlian": [
         "node.js",
         "vue.js"
       ]
@@ -120,9 +120,9 @@
       "nama": "Lukas Amadeo",
       "divisi": "Marketing",
       "posisi": "SEO Specialist",
-      "salary": 18000000,
+      "gaji": 18000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "seo",
         "content marketing"
       ]
@@ -132,9 +132,9 @@
       "nama": "Clara Han",
       "divisi": "Design",
       "posisi": "UI/UX Designer",
-      "salary": 21000000,
+      "gaji": 21000000,
       "status": "Active",
-      "skills": [
+      "keahlian": [
         "figma",
         "adobe xd"
       ]
@@ -144,9 +144,9 @@
       "nama": "Ivan Pratama",
       "divisi": "IT Development",
       "posisi": "Frontend Developer",
-      "salary": 19000000,
+      "gaji": 19000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "react",
         "angular"
       ]
@@ -156,9 +156,9 @@
       "nama": "Rachel Lee",
       "divisi": "Finance",
       "posisi": "Financial Analyst",
-      "salary": 20000000,
+      "gaji": 20000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "excel",
         "financial modeling"
       ]
@@ -168,9 +168,9 @@
       "nama": "Samuel Tan",
       "divisi": "IT Development",
       "posisi": "Backend Developer",
-      "salary": 22000000,
+      "gaji": 22000000,
       "status": "Active",
-      "skills": [
+      "keahlian": [
         "node.js",
         "express"
       ]
@@ -180,9 +180,9 @@
       "nama": "Alia Putri",
       "divisi": "Research",
       "posisi": "Data Scientist",
-      "salary": 23000000,
+      "gaji": 23000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "python",
         "machine learning"
       ]
@@ -192,9 +192,9 @@
       "nama": "Andre Surya",
       "divisi": "HR",
       "posisi": "HR Manager",
-      "salary": 20000000,
+      "gaji": 20000000,
       "status": "Active",
-      "skills": [
+      "keahlian": [
         "recruitment",
         "employee relations"
       ]
@@ -204,9 +204,9 @@
       "nama": "Diana Kusuma",
       "divisi": "Design",
       "posisi": "Graphic Designer",
-      "salary": 18000000,
+      "gaji": 18000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "photoshop",
         "illustrator"
       ]
@@ -216,9 +216,9 @@
       "nama": "Michael Lim",
       "divisi": "IT Development",
       "posisi": "DevOps Engineer",
-      "salary": 23000000,
+      "gaji": 23000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "docker",
         "kubernetes"
       ]
@@ -228,9 +228,9 @@
       "nama": "Siti Aisyah",
       "divisi": "Sales",
       "posisi": "Sales Executive",
-      "salary": 19000000,
+      "gaji": 19000000,
       "status": "Active",
-      "skills": [
+      "keahlian": [
         "negotiation",
         "crm"
       ]
@@ -240,9 +240,9 @@
       "nama": "Rizky Alif",
       "divisi": "IT Development",
       "posisi": "Fullstack Developer",
-      "salary": 22000000,
+      "gaji": 22000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "laravel",
         "vue.js"
       ]
@@ -252,9 +252,9 @@
       "nama": "Nina Saraswati",
       "divisi": "Marketing",
       "posisi": "Content Creator",
-      "salary": 18000000,
+      "gaji": 18000000,
       "status": "Active",
-      "skills": [
+      "keahlian": [
         "content writing",
         "social media"
       ]
@@ -264,9 +264,9 @@
       "nama": "Yusuf Maulana",
       "divisi": "Finance",
       "posisi": "Accountant",
-      "salary": 20000000,
+      "gaji": 20000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "tax",
         "budgeting"
       ]
@@ -276,9 +276,9 @@
       "nama": "Karen Wong",
       "divisi": "IT Development",
       "posisi": "Frontend Developer",
-      "salary": 21000000,
+      "gaji": 21000000,
       "status": "Active",
-      "skills": [
+      "keahlian": [
         "react",
         "tailwind"
       ]
@@ -288,9 +288,9 @@
       "nama": "Irfan Hamzah",
       "divisi": "IT Development",
       "posisi": "Backend Developer",
-      "salary": 22000000,
+      "gaji": 22000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "golang",
         "mysql"
       ]
@@ -300,9 +300,9 @@
       "nama": "Julia Lestari",
       "divisi": "Design",
       "posisi": "UI/UX Designer",
-      "salary": 21000000,
+      "gaji": 21000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "sketch",
         "figma"
       ]
@@ -312,9 +312,9 @@
       "nama": "Arif Ramadhan",
       "divisi": "IT Development",
       "posisi": "Mobile Developer",
-      "salary": 23000000,
+      "gaji": 23000000,
       "status": "Active",
-      "skills": [
+      "keahlian": [
         "flutter",
         "react native"
       ]
@@ -324,9 +324,9 @@
       "nama": "Dewi Puspita",
       "divisi": "Research",
       "posisi": "Data Analyst",
-      "salary": 20000000,
+      "gaji": 20000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "python",
         "r"
       ]
@@ -336,9 +336,9 @@
       "nama": "Budi Santoso",
       "divisi": "Sales",
       "posisi": "Account Manager",
-      "salary": 21000000,
+      "gaji": 21000000,
       "status": "Active",
-      "skills": [
+      "keahlian": [
         "crm",
         "salesforce"
       ]
@@ -348,9 +348,9 @@
       "nama": "Lena Aditya",
       "divisi": "IT Development",
       "posisi": "DevOps Engineer",
-      "salary": 23000000,
+      "gaji": 23000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "jenkins",
         "docker"
       ]
@@ -360,9 +360,9 @@
       "nama": "David Hartono",
       "divisi": "Design",
       "posisi": "Graphic Designer",
-      "salary": 18000000,
+      "gaji": 18000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "illustrator",
         "indesign"
       ]
@@ -372,9 +372,9 @@
       "nama": "Farah Maharani",
       "divisi": "HR",
       "posisi": "Recruitment Specialist",
-      "salary": 20000000,
+      "gaji": 20000000,
       "status": "Active",
-      "skills": [
+      "keahlian": [
         "interviewing",
         "headhunting"
       ]
@@ -384,9 +384,9 @@
       "nama": "Kevin Tan",
       "divisi": "IT Development",
       "posisi": "Fullstack Developer",
-      "salary": 22000000,
+      "gaji": 22000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "django",
         "react"
       ]
@@ -396,9 +396,9 @@
       "nama": "Sofian Nugraha",
       "divisi": "IT Development",
       "posisi": "Frontend Developer",
-      "salary": 21000000,
+      "gaji": 21000000,
       "status": "Active",
-      "skills": [
+      "keahlian": [
         "vue.js",
         "tailwind"
       ]
@@ -408,9 +408,9 @@
       "nama": "Elisa Pratiwi",
       "divisi": "Research",
       "posisi": "Data Scientist",
-      "salary": 23000000,
+      "gaji": 23000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "sql",
         "data visualization"
       ]
@@ -420,9 +420,9 @@
       "nama": "Ahmad Fikri",
       "divisi": "IT Development",
       "posisi": "Backend Developer",
-      "salary": 22000000,
+      "gaji": 22000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "php",
         "laravel"
       ]
@@ -432,9 +432,9 @@
       "nama": "Rina Surya",
       "divisi": "Marketing",
       "posisi": "Digital Marketer",
-      "salary": 19000000,
+      "gaji": 19000000,
       "status": "Active",
-      "skills": [
+      "keahlian": [
         "google ads",
         "facebook ads"
       ]
@@ -444,9 +444,9 @@
       "nama": "Tommy Wijaya",
       "divisi": "Finance",
       "posisi": "Financial Analyst",
-      "salary": 20000000,
+      "gaji": 20000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "excel",
         "forecasting"
       ]
@@ -456,9 +456,9 @@
       "nama": "Maya Sari",
       "divisi": "IT Development",
       "posisi": "Frontend Developer",
-      "salary": 21000000,
+      "gaji": 21000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "angular",
         "sass"
       ]
@@ -468,9 +468,9 @@
       "nama": "Reza Anggara",
       "divisi": "IT Development",
       "posisi": "Backend Developer",
-      "salary": 22000000,
+      "gaji": 22000000,
       "status": "Active",
-      "skills": [
+      "keahlian": [
         "node.js",
         "mongodb"
       ]
@@ -480,9 +480,9 @@
       "nama": "Zahra Alia",
       "divisi": "Design",
       "posisi": "UI/UX Designer",
-      "salary": 21000000,
+      "gaji": 21000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "adobe xd",
         "figma"
       ]
@@ -492,9 +492,9 @@
       "nama": "Hendra Wijaya",
       "divisi": "Sales",
       "posisi": "Sales Manager",
-      "salary": 22000000,
+      "gaji": 22000000,
       "status": "Active",
-      "skills": [
+      "keahlian": [
         "leadership",
         "crm"
       ]
@@ -504,9 +504,9 @@
       "nama": "Siti Rahmawati",
       "divisi": "HR",
       "posisi": "HR Generalist",
-      "salary": 20000000,
+      "gaji": 20000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "payroll",
         "employee relations"
       ]
@@ -516,9 +516,9 @@
       "nama": "Toni Wahyu",
       "divisi": "IT Development",
       "posisi": "Mobile Developer",
-      "salary": 23000000,
+      "gaji": 23000000,
       "status": "Idle",
-      "skills": [
+      "keahlian": [
         "kotlin",
         "swift"
       ]
@@ -526,17 +526,17 @@
     {
       "id": "4ae16bc5-9871-45e4-9d1d-6da3ec32766f",
       "nama": "Faisal Riza",
-      "firstName": "Faisal",
-      "lastName": "Riza",
+      "namaPertama": "Faisal",
+      "namaTerakhir": "Riza",
       "tanggalLahir": "2024-09-02T17:00:00.000Z",
       "domisili": "Yogyakarta",
-      "phone": "082216386576",
+      "nomorTelepon": "082216386576",
       "email": "faisalabubakar.works@gmail.com",
       "divisi": "IT Development",
       "posisi": "Frontend Developer",
       "kontrak": 2,
-      "salary": 10000000,
-      "skills": [
+      "gaji": 10000000,
+      "keahlian": [
         "laravel",
         "react"
       ],
@@ -550,20 +550,18 @@
       "cv": "https://firebasestorage.googleapis.com/v0/b/react-auth-tutorial-f29d2.appspot.com/o/uploads%2FUpdated%20CV.pdf?alt=media&token=9011bdc6-712e-42b7-a127-bfd5d2a07c49"
     },
     {
-      "id": "be9f6657-2c32-4016-b186-7aa5fcc0a12e",
-      "nama": "Faisal Riza",
-      "firstName": "Faisal",
-      "lastName": "Riza",
+      "namaPertama": "Faisal Update",
+      "namaTerakhir": "Riza",
       "tanggalLahir": "2024-09-03T17:00:00.000Z",
       "domisili": "Bekasi",
-      "phone": "082216386576",
+      "nomorTelepon": "082216386576",
       "email": "faisalabubakar92@gmail.com",
-      "tentangDiri": "{\"__type\":\"root\",\"__parent\":null,\"__prev\":null,\"__next\":null,\"__key\":\"root\",\"__first\":\"2\",\"__last\":\"2\",\"__size\":1,\"__format\":0,\"__style\":\"\",\"__indent\":0,\"__dir\":\"ltr\",\"__cachedText\":\"sadsadadsadad\"}",
+      "tentangDiri": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"dsadsdad\",\"type\":\"text\",\"version\":1},{\"detail\":0,\"format\":1,\"mode\":\"normal\",\"style\":\"\",\"text\":\"dsadsad\",\"type\":\"text\",\"version\":1},{\"detail\":0,\"format\":3,\"mode\":\"normal\",\"style\":\"\",\"text\":\"dasdas\",\"type\":\"text\",\"version\":1},{\"detail\":0,\"format\":11,\"mode\":\"normal\",\"style\":\"\",\"text\":\"dasdsadas\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1,\"textFormat\":0,\"textStyle\":\"\"}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
       "divisi": "IT Development",
       "posisi": "Frontend Developer",
       "kontrak": 2,
-      "salary": 1000000,
-      "skills": [
+      "gaji": 10000000,
+      "keahlian": [
         "laravel"
       ],
       "bahasa": [
@@ -573,8 +571,35 @@
       "linkedin": "dsada",
       "websitePortfolio": "dsada",
       "status": "idle",
-      "isAvailableWFO": true,
-      "cv": "https://firebasestorage.googleapis.com/v0/b/react-auth-tutorial-f29d2.appspot.com/o/uploads%2F1%20(8).png?alt=media&token=1cd271f3-1eca-4fa9-b2c1-71397db6aec1"
+      "bersediaWFO": false,
+      "cv": "https://firebasestorage.googleapis.com/v0/b/react-auth-tutorial-f29d2.appspot.com/o/uploads%2F1%20(8).png?alt=media&token=1cd271f3-1eca-4fa9-b2c1-71397db6aec1",
+      "id": "be9f6657-2c32-4016-b186-7aa5fcc0a12e",
+      "nama": "Faisal Update Riza"
+    },
+    {
+      "namaPertama": "Dia Update",
+      "namaTerakhir": "Nda",
+      "tanggalLahir": "2024-09-04T17:00:00.000Z",
+      "domisili": "Yogyakarta",
+      "nomorTelepon": "2131233123",
+      "email": "contoh@gmal.com",
+      "tentangDiri": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"dsadsa\",\"type\":\"text\",\"version\":1},{\"detail\":0,\"format\":1,\"mode\":\"normal\",\"style\":\"\",\"text\":\"dasdsa\",\"type\":\"text\",\"version\":1},{\"detail\":0,\"format\":3,\"mode\":\"normal\",\"style\":\"\",\"text\":\"dsad\",\"type\":\"text\",\"version\":1},{\"detail\":0,\"format\":11,\"mode\":\"normal\",\"style\":\"\",\"text\":\"da\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1,\"textFormat\":0,\"textStyle\":\"\"}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+      "divisi": "IT Development",
+      "posisi": "Frontend Developer",
+      "kontrak": 2,
+      "gaji": 1000000,
+      "keahlian": [
+        "react"
+      ],
+      "bahasa": [
+        "indonesia"
+      ],
+      "github": "dsads",
+      "linkedin": "a",
+      "status": "idle",
+      "cv": "https://firebasestorage.googleapis.com/v0/b/react-auth-tutorial-f29d2.appspot.com/o/uploads%2FUpdated%20CV.pdf?alt=media&token=7a2e27b2-b3f3-4e89-a962-ada0727bb751",
+      "id": "4f16c8ad-dc02-45c0-a0c4-78aa203695d5",
+      "nama": "Dia Update Nda"
     }
   ]
 }

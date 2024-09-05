@@ -19,14 +19,13 @@ import {
   FilterOutlined,
   PlusSquareOutlined,
 } from "@ant-design/icons";
-import { formatCurrency } from "@/Utils/utils";
+import { formatCurrency, useMobileScreen } from "@/Utils/utils";
 import type { GetProps } from "antd";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { deleteTalent, fetchTalents } from "@/Services/talents";
 import { useEffect, useState } from "react";
 import { ENDPOINTS, SELECT_DIVISI, SELECT_POSISI } from "@/Constants";
 import { useNavigate } from "react-router-dom";
-import { useMobile } from "@/Hooks/useMobile";
 import { TalentTypes } from "@/Types";
 
 type SearchProps = GetProps<typeof Input.Search>;
@@ -43,7 +42,7 @@ export const Talent = () => {
   });
   const [openDelete, setOpenDelete] = useState<boolean>(false);
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
-  const { isMobile } = useMobile();
+  const isMobile = useMobileScreen();
   const [selectedId, setSelectedId] = useState<string>("");
   const queryClient = useQueryClient();
 
@@ -164,6 +163,7 @@ export const Talent = () => {
             Delete
           </Button>
           <Button
+            href={ENDPOINTS.TALENTS.EDIT + `/${record.id}`}
             style={{ backgroundColor: "#faad14", borderColor: "#faad14" }}
             icon={<EditOutlined />}
           >

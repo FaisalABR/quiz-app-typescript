@@ -1,13 +1,13 @@
-import { $createCodeNode, $isCodeNode } from "@lexical/code";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import {
-  $createParagraphNode,
   $getSelection,
   $isRangeSelection,
   LexicalCommand,
   TextFormatType,
 } from "lexical";
 import Button from "./Button";
+import { useEffect, useState } from "react";
+import { themeColors } from "@/Utils/theme";
 
 const EditorButton = ({
   command,
@@ -20,29 +20,34 @@ const EditorButton = ({
 }) => {
   const [editor] = useLexicalComposerContext();
 
-  const handleClick = () => {
-    editor.update(() => {
-      const selection = $getSelection();
-      if ($isRangeSelection(selection)) {
-        if (commandArgs === "code") {
-          const anchorNode = selection.anchor.getNode();
+  const [isActive, setIsActive] = useState(false);
 
-          if ($isCodeNode(anchorNode)) {
-            const paragraphNode = $createParagraphNode();
-            paragraphNode.append(...anchorNode.getChildren());
-            anchorNode.replace(paragraphNode);
-          } else {
-            const codeNode = $createCodeNode();
-            selection.insertNodes([codeNode]);
-          }
-        } else {
-          editor.dispatchCommand(command, commandArgs);
+  useEffect(() => {
+    const unsubscribe = editor.registerUpdateListener(({ editorState }) => {
+      editorState.read(() => {
+        const selection = $getSelection();
+        if ($isRangeSelection(selection)) {
+          setIsActive(selection.hasFormat(commandArgs!));
         }
-      }
+      });
     });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [editor, commandArgs]);
+
+  const handleClick = () => {
+    editor.dispatchCommand(command, commandArgs);
   };
 
-  return <Button onClick={handleClick} icon={icon} />;
+  return (
+    <Button
+      style={{ backgroundColor: isActive ? themeColors.primary : "white" }}
+      onClick={handleClick}
+      icon={icon}
+    />
+  );
 };
 
 export default EditorButton;

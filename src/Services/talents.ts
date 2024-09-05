@@ -21,3 +21,16 @@ export const createTalent = async (data: TalentTypes) => {
     ...data,
   });
 };
+
+export const fetchTalent = async (talentId: string) => {
+  return callAPI.get({
+    endpoint: ENDPOINTS.TALENTS.DEFAULT + `/${talentId}`,
+  });
+};
+
+export const updateTalent = async (data: TalentTypes) => {
+  return callAPI.put({
+    endpoint: ENDPOINTS.TALENTS.DEFAULT + `/${data.id}`,
+    ...data,
+  });
+};

@@ -181,6 +181,7 @@ export const ENDPOINTS = {
   TALENTS: {
     DEFAULT: "/talents",
     CREATE: "/talents/create",
+    EDIT: "/talents/edit",
   },
 };
 
