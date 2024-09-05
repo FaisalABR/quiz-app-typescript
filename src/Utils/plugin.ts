@@ -18,20 +18,24 @@ export const RenderContentFromDBPlugin = ({ form }: { form: FormInstance }) => {
 
   useEffect(() => {
     const render = () => {
-      const content = form.getFieldValue("tentangDiri");
-      if (content) {
-        editor.update(() => {
-          const parsedContent = JSON.parse(content);
-          const editorState = editor.parseEditorState(parsedContent);
-          editor.setEditorState(editorState);
-        });
-      } else {
-        return;
+      const tentangDiriContent = form.getFieldValue("tentangDiri");
+      console.log(tentangDiriContent);
+
+      if (tentangDiriContent) {
+        try {
+          const parsedContent = JSON.parse(tentangDiriContent);
+          editor.update(() => {
+            const editorState = editor.parseEditorState(parsedContent);
+            editor.setEditorState(editorState);
+          });
+        } catch (error) {
+          console.error("Error parsing editor content:", error);
+        }
       }
     };
 
     render();
-  }, [editor, form.getFieldsValue()]);
+  }, [editor, form]);
 
   return null;
 };

@@ -1,5 +1,5 @@
 import {
-  CLEAR_EDITOR_COMMAND,
+  $getRoot,
   EditorState,
   FORMAT_ELEMENT_COMMAND,
   FORMAT_TEXT_COMMAND,
@@ -36,7 +36,10 @@ const ClearButton = () => {
   const [editor] = useLexicalComposerContext();
 
   const handleClick = () => {
-    editor.dispatchCommand(CLEAR_EDITOR_COMMAND, undefined);
+    editor.update(() => {
+      const root = $getRoot();
+      root.clear();
+    });
   };
 
   return <Button handleClick={handleClick} icon={<ClearOutlined />} />;
@@ -77,7 +80,7 @@ export const Editor = ({ form }: { form: FormInstance }) => {
         <EditorButton command={UNDO_COMMAND} icon={<UndoOutlined />} />
         <EditorButton command={REDO_COMMAND} icon={<RedoOutlined />} />
         <EditorButton
-          command={FORMAT_ELEMENT_COMMAND}
+          command={FORMAT_TEXT_COMMAND}
           commandArgs="code"
           icon={<CodeOutlined />}
         />

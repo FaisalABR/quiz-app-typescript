@@ -19,6 +19,7 @@ import {
   message,
   Result,
   Select,
+  Spin,
   Switch,
   Upload,
   UploadFile,
@@ -54,7 +55,7 @@ export const UpdateTalent = () => {
   const navigate = useNavigate();
   const { talentId } = useParams();
 
-  const { data, isError } = useQuery({
+  const { data, isError, isLoading } = useQuery({
     queryKey: ["talent", talentId],
     queryFn: () => fetchTalent(talentId!),
     enabled: !!talentId,
@@ -253,7 +254,7 @@ export const UpdateTalent = () => {
                 rules={[rule]}
                 layout="vertical"
               >
-                <Editor form={form} />
+                {isLoading ? <Spin /> : <Editor form={form} />}
               </Form.Item>
 
               <Divider style={{ marginTop: isMobile ? "0px" : "350px" }}>
