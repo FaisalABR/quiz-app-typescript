@@ -10,13 +10,13 @@ import {
 import { ReactNode, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { siderThemeConfig } from "../../Utils/theme";
-import { useMobile } from "../../Hooks/useMobile";
+import { useMobileScreen } from "@/Utils/utils";
 
 export const AntdLayout = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
   const [collapsed, setCollapsed] = useState<boolean>(true);
   const [current, setCurrent] = useState<string>(location.pathname);
-  const { isMobile } = useMobile();
+  const isMobile = useMobileScreen();
 
   useEffect(() => {
     if (location) {

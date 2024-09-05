@@ -36,7 +36,8 @@
   user-select: none;
   pointer-events: none;
   position: absolute;
-  top: 10;
+  top: 110px;
+  left: 20px;
 }
 
 .editor-paragraph {

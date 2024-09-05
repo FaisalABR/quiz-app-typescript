@@ -31,7 +31,6 @@ import { fetchTalent, updateTalent } from "@/Services/talents";
 import { ENDPOINTS, SELECT_DIVISI, SELECT_POSISI_CHAINING } from "@/Constants";
 import { useEffect, useState } from "react";
 import { UploadOutlined } from "@ant-design/icons";
-import { useMobile } from "@/Hooks/useMobile";
 import { createSchemaFieldRule } from "antd-zod";
 import { CreateTalentValidation } from "@/Validation";
 import { useNavigate, useParams } from "react-router-dom";
@@ -39,6 +38,7 @@ import { RcFile } from "antd/es/upload";
 import { Editor } from "@/Components/organism";
 import { themeColors } from "@/Utils/theme";
 import dayjs from "dayjs";
+import { useMobileScreen } from "@/Utils/utils";
 
 const { Option } = Select;
 
@@ -50,7 +50,7 @@ export const UpdateTalent = () => {
   const [selectDivisi, setSelectDivisi] = useState("");
   const [fileRefs, setFileRefs] = useState<Map<string, string>>(new Map());
   const [fileList, setFileList] = useState<UploadFile[]>([]);
-  const { isMobile } = useMobile();
+  const isMobile = useMobileScreen();
   const navigate = useNavigate();
   const { talentId } = useParams();
 
@@ -100,8 +100,6 @@ export const UpdateTalent = () => {
     values["id"] = data.id;
     values["nama"] = `${values.namaPertama} ${values.namaTerakhir}`;
     mutation.mutate(values);
-
-    form.resetFields();
   };
 
   const props: UploadProps = {
@@ -258,7 +256,7 @@ export const UpdateTalent = () => {
                 <Editor form={form} />
               </Form.Item>
 
-              <Divider style={{ marginTop: "300px" }}>
+              <Divider style={{ marginTop: isMobile ? "0px" : "350px" }}>
                 Profesional Information
               </Divider>
               <Form.Item

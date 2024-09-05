@@ -30,7 +30,6 @@ import { createTalent } from "@/Services/talents";
 import { ENDPOINTS, SELECT_DIVISI, SELECT_POSISI_CHAINING } from "@/Constants";
 import { useState } from "react";
 import { UploadOutlined } from "@ant-design/icons";
-import { useMobile } from "@/Hooks/useMobile";
 import { createSchemaFieldRule } from "antd-zod";
 import { CreateTalentValidation } from "@/Validation";
 import { v4 as uuidv4 } from "uuid";
@@ -38,6 +37,7 @@ import { useNavigate } from "react-router-dom";
 import { RcFile } from "antd/es/upload";
 import { Editor } from "@/Components/organism";
 import { themeColors } from "@/Utils/theme";
+import { useMobileScreen } from "@/Utils/utils";
 
 const { Option } = Select;
 
@@ -49,7 +49,7 @@ export const CreateTalent = () => {
   const [selectDivisi, setSelectDivisi] = useState("");
   const [fileRefs, setFileRefs] = useState<Map<string, string>>(new Map());
   const [fileList, setFileList] = useState<UploadFile[]>([]);
-  const { isMobile } = useMobile();
+  const isMobile = useMobileScreen();
   const navigate = useNavigate();
 
   const mutation = useMutation({
@@ -208,7 +208,7 @@ export const CreateTalent = () => {
               <Editor form={form} />
             </Form.Item>
 
-            <Divider style={{ marginTop: "300px" }}>
+            <Divider style={{ marginTop: isMobile ? "0px" : "350px" }}>
               Profesional Information
             </Divider>
             <Form.Item

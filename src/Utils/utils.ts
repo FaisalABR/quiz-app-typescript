@@ -1,5 +1,6 @@
 import { client } from "@/Services/axios";
 import { CallAPIProps } from "@/Types";
+import { useMediaQuery } from "react-responsive";
 
 export const formatCurrency = (nominal: number): string => {
   const currency = nominal?.toLocaleString("id-Id");
@@ -25,4 +26,8 @@ export const callAPI = {
   delete: (props: CallAPIProps) => apiCall("delete", props),
   post: (props: CallAPIProps) => apiCall("post", props),
   put: (props: CallAPIProps) => apiCall("put", props),
+};
+
+export const useMobileScreen = () => {
+  return useMediaQuery({ query: "(max-width: 767px" });
 };
