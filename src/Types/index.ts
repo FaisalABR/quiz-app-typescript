@@ -1,4 +1,4 @@
-import { ButtonProps } from "antd";
+import { ButtonProps, FormInstance, FormProps } from "antd";
 import { AxiosRequestConfig } from "axios";
 import { FirebaseError } from "firebase/app";
 import { User, UserCredential } from "firebase/auth";
@@ -222,3 +222,11 @@ export type DivisiType =
   | "Marketing";
 
 export type OptionType = { value: string; label: string; disabled?: boolean };
+
+export interface IFormProps {
+  title: string;
+  form: FormInstance;
+  onFinish: FormProps<TalentTypes>["onFinish"];
+  data?: TalentTypes;
+  isLoading?: boolean;
+}

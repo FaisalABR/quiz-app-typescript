@@ -19,7 +19,6 @@ export const RenderContentFromDBPlugin = ({ form }: { form: FormInstance }) => {
   useEffect(() => {
     const render = () => {
       const tentangDiriContent = form.getFieldValue("tentangDiri");
-      console.log(tentangDiriContent);
 
       if (tentangDiriContent) {
         try {
